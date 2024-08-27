@@ -1,0 +1,51 @@
+@use "global" as *;
+
+.button {
+  font-size: rem(14);
+  line-height: calc(14 / 22);
+  font-family: $english-font-family;
+  font-weight: $regular;
+  color: $white;
+  background-color: $blue;
+  padding: rem(16) rem(40) rem(16);
+  border: 1px solid $blue;
+  position: relative;
+  box-shadow: #fff 4px 4px 0 0, $blue 4px 4px 0 1px;
+  box-sizing: border-box;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.button:hover {
+  color: $blue;
+  background-color: $white;
+  transition: 0.3s;
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: rem(40);
+  height: 1px;
+  margin-top: 29px;
+  border-radius: 9999px;
+  background-color: $white;
+  margin-left: rem(8);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  right: 0;
+  width: rem(10);
+  height: 1px;
+  border-radius: 9999px;
+  background-color: $white;
+  transform: rotate(45deg);
+  transform-origin: calc(100% - 2px) 50%;
+}
+.button:hover .arrow,
+.button:hover .arrow::before {
+  background-color: $blue; /* ボタンホバー時に矢印の色を変更 */
+}

@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.header {
+  height: rem(80);
+  background-color: rgb(13, 41, 54, 0.68);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header__inner {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding-right: rem(40);
+  padding-left: rem(40);
+  align-items: center;
+}
+.header__logo {
+  width: rem(102);
+  aspect-ratio: 102/38;
+  @include mq("md") {
+    width: rem(133);
+    aspect-ratio: 133/50;
+  }
+}
+.header__pc-nav {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+.header__drawer {
+  @include mq("md") {
+    display: none;
+  }
+}

@@ -1,0 +1,105 @@
+@use "global" as *;
+
+.about {
+  margin-top: rem(80);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(140);
+  }
+}
+.about::before {
+  // display: none;
+  // @include mq("md") {
+  content: none;
+    @include mq("md") {
+      content: "";
+      background-image: url(../../assets/images/common/decoration_1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: -100px;
+      right: 0;
+      z-index: 50;
+      width: 194px;
+      aspect-ratio: 194/181;
+    }
+  }
+
+
+.about-header {
+}
+.about__photo__wrap {
+  margin-top: rem(50);
+  position: relative;
+
+  @include mq("md") {
+    margin-top: rem(120);
+  }
+}
+
+.about__photo1 {
+  display: block;
+  aspect-ratio: 128/194;
+  width: 34.1%; //(128/375)
+  margin-top: -200px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  @include mq("md") {
+    margin-top: -600px;
+  }
+}
+.about__photo2 {
+  display: block;
+  aspect-ratio: 281/186;
+  width: 74.9%; //(281/375)
+  margin-left: auto;
+  position: relative;
+  z-index: -1;
+  object-fit: cover;
+}
+.about__text__wrap {
+  margin-top: rem(40);
+  @include mq("md") {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    gap: rem(40);
+  }
+}
+
+.about__text__title {
+  font-family: $english-font-family;
+  font-size: rem(40);
+  font-weight: $regular;
+  color: $blue;
+  line-height: calc(40 / 40);
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+    color: $white;
+  }
+}
+
+.about__text {
+  margin-top: rem(16);
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $regular;
+  color: $black;
+  line-height: calc(24 / 16);
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.about__button {
+  margin-top: rem(50);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
