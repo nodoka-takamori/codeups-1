@@ -1,73 +1,83 @@
 @use "global" as *;
 
 .about {
-  margin-top: rem(80);
+  padding-top: rem(97);
   position: relative;
+  padding-bottom: rem(91);
   @include mq("md") {
-    margin-top: rem(140);
+    padding-top: rem(152);
+    padding-bottom: rem(222);
   }
 }
-.about::before {
-  // display: none;
-  // @include mq("md") {
-  content: none;
-    @include mq("md") {
-      content: "";
-      background-image: url(../../assets/images/common/decoration_1.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: absolute;
-      bottom: -100px;
-      right: 0;
-      z-index: 50;
-      width: 194px;
-      aspect-ratio: 194/181;
-    }
-  }
 
-
-.about-header {
-}
-.about__photo__wrap {
-  margin-top: rem(50);
+.about__photo__container {
+  margin-top: rem(28);
   position: relative;
-
   @include mq("md") {
-    margin-top: rem(120);
+    margin-top: rem(38);
+  }
+}
+.about__photo__container::before {
+  @include mq("md") {
+    content: "";
+    background-image: url(../../assets/images/common/decoration_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: rem(-154);
+    right: calc(50% - min(48.5vw, rem(636)));
+    z-index: 50;
+    width: 17.4%;
+    aspect-ratio: 194/181;
   }
 }
 
 .about__photo1 {
   display: block;
-  aspect-ratio: 128/194;
-  width: 34.1%; //(128/375)
-  margin-top: -200px;
+  width: 37.1%;
   object-fit: cover;
-  position: relative;
-  z-index: 1;
+  z-index: 2;
   @include mq("md") {
-    margin-top: -600px;
+    width: 36.03%;
+    margin-left: rem(11);
   }
 }
 .about__photo2 {
   display: block;
   aspect-ratio: 281/186;
-  width: 74.9%; //(281/375)
-  margin-left: auto;
-  position: relative;
+  width: 81.44%;
+  position: absolute;
+  right: 0;
+  top: rem(26);
   z-index: -1;
   object-fit: cover;
+  margin-left: auto;
+  @include mq("md") {
+    width: 80%;
+    top: rem(78);
+    margin-right: rem(10);
+  }
 }
 .about__text__wrap {
-  margin-top: rem(40);
+  margin-top: rem(57);
   @include mq("md") {
+    width: 77.77%;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50.5%;
+    left: 57%;
     transform: translate(-50%, -50%);
     z-index: 5;
     display: flex;
-    gap: rem(40);
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-top: 0;
+  }
+}
+.is-pc {
+  display: none;
+  @include mq("md") {
+    display: block;
   }
 }
 
@@ -77,10 +87,14 @@
   font-weight: $regular;
   color: $blue;
   line-height: calc(40 / 40);
+  white-space: nowrap;
+  margin-top: rem(56);
+
   @include mq("md") {
     font-size: rem(80);
     line-height: calc(100 / 80);
     color: $white;
+    margin-top: 0;
   }
 }
 
@@ -91,15 +105,19 @@
   font-weight: $regular;
   color: $black;
   line-height: calc(24 / 16);
+
   @include mq("md") {
     color: $white;
+    margin-top: rem(21);
   }
 }
 
 .about__button {
-  margin-top: rem(50);
+  margin-top: rem(52);
+  margin-right: rem(17);
   text-align: center;
   @include mq("md") {
-    margin-top: rem(40);
+    margin-top: rem(42);
+    margin-left: rem(15);
   }
 }

@@ -1,20 +1,26 @@
 @use "global" as *;
+.campaign {
+  margin-top: rem(36);
 
-.campaign.campaign {
-  padding-right: 0;
-  max-width: 100%;
-  // @include mq("md") {
-  //   padding-right: 0;
-  // }
-}
-.campaign-title {
-  margin-top: rem(40);
   @include mq("md") {
-    margin-top: rem(120);
+    margin-top: rem(110);
+    padding-left: 0;
   }
 }
+
 .campaign__title__wrap {
   position: relative;
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  width: 100%;
+
+  margin-inline: auto;
+  @include mq("md") {
+    max-width: rem(1080);
+    padding-left: $padding-pc;
+    padding-right: $padding-pc;
+    margin-inline: auto;
+  }
 }
 .campaign__arrow__wrap {
   display: none;
@@ -22,32 +28,44 @@
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    top: 0;
+    top: rem(10);
     right: 0;
     gap: rem(80);
   }
 }
-.campaign__arrow__wrap img {
+.campaign__right__button,
+.campaign__left__button {
   width: rem(80);
   aspect-ratio: 1/1;
 }
-.campaign__card__container {
-  display: flex;
-  overflow: scroll;
+.campaign__card__inner {
+  padding-left: $padding-sp;
+  padding-right: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: rem(28);
+  @include mq("md") {
+    padding-left: rem(180);
+    margin-top: rem(35);
+  }
 }
 
 .campaign__card {
   width: rem(280);
   position: relative;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  @include mq("md") {
+    width: rem(333);
+  }
+}
+.campaign-swiper-slide {
+  margin-bottom: rem(14);
   margin-right: rem(24);
-  margin-top: rem(24);
-  margin-bottom: rem(10);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: rem(280);
 
   @include mq("md") {
     width: rem(333);
-    margin-right: rem(44);
-    margin-top: rem(40);
+    margin-right: rem(40);
   }
 }
 
@@ -55,13 +73,14 @@
   overflow: hidden;
   z-index: 1;
   position: relative;
+  aspect-ratio: 280 / 188;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+  transition: transform 0.8s;
 
-  img {
-    aspect-ratio: 280 / 188;
-    object-fit: cover;
-    height: auto;
-    width: 100%;
-    transition: transform 0.8s;
+  @include mq("md") {
+    aspect-ratio: 333 / 223;
   }
 }
 
@@ -74,10 +93,9 @@
 
 .campaign__card__body {
   width: 100%;
-  padding: rem(8) rem(16) rem(24);
-
+  padding: rem(16) rem(16) rem(19);
   @include mq("md") {
-    padding: rem(24) rem(16) rem(40);
+    padding: rem(27) rem(16) rem(28);
   }
 }
 
@@ -94,7 +112,11 @@
   text-align: center;
   align-content: center;
   height: rem(30);
-  max-width: rem(108);
+  max-width: rem(107);
+  @include mq("md") {
+    height: rem(34);
+    max-width: rem(115);
+  }
 }
 
 .campaign__card__title {
@@ -109,6 +131,10 @@
 .campaign__card__text__wrap {
   text-align: center;
   margin-top: rem(8);
+  @include mq("md") {
+    margin-top: rem(16);
+    margin-right: rem(20);
+  }
 }
 
 .campaign__card__text {
@@ -123,6 +149,9 @@
 .campaign__card__price__wrap {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+  @include mq("md") {
+  }
 }
 
 .campaign__card__subprice {
@@ -135,10 +164,11 @@
   font-size: rem(20);
   font-weight: $bold;
   color: $black;
-  margin-right: rem(16);
+  margin-left: rem(19);
+  line-height: 2.4;
   @include mq("md") {
     font-size: rem(24);
-    margin-right: rem(24);
+    margin-left: rem(17);
   }
 }
 
@@ -147,16 +177,19 @@
   font-size: rem(32);
   font-weight: $bold;
   color: $blue;
+  margin-right: rem(18);
 
   @include mq("md") {
     font-size: rem(40);
+    margin-right: 0;
   }
 }
 
 .campaign__button {
-  margin-top: rem(40);
+  margin-top: rem(27);
   text-align: center;
+  margin-right: rem(5);
   @include mq("md") {
-    margin-top: rem(80);
+    margin-top: rem(67);
   }
 }

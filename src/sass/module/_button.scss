@@ -26,8 +26,8 @@
   position: relative;
   display: inline-block;
   width: rem(40);
-  height: 1px;
-  margin-top: 29px;
+  height: rem(1);
+  margin-top: rem(29);
   border-radius: 9999px;
   background-color: $white;
   margin-left: rem(8);
@@ -36,10 +36,10 @@
 .arrow::before {
   content: "";
   position: absolute;
-  top: calc(50% - 2px);
+  top: calc(50% - rem(2));
   right: 0;
   width: rem(10);
-  height: 1px;
+  height: rem(1);
   border-radius: 9999px;
   background-color: $white;
   transform: rotate(45deg);
@@ -47,5 +47,20 @@
 }
 .button:hover .arrow,
 .button:hover .arrow::before {
-  background-color: $blue; /* ボタンホバー時に矢印の色を変更 */
+  background-color: $blue;
+}
+
+.button__top {
+  position: fixed;
+  bottom: rem(24);
+  right: rem(15);
+  opacity: 1;
+  z-index: 777;
+  width: 14%;
+  @include mq("md") {
+    width: rem(80);
+  }
+}
+.button__top img {
+  aspect-ratio: 1/1;
 }

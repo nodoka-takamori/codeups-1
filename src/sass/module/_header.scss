@@ -1,22 +1,29 @@
 @use "global" as *;
 
 .header {
-  height: rem(80);
+  height: rem(79);
   background-color: rgb(13, 41, 54, 0.68);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-}
 
+  @include mq("md") {
+    height: rem(91);
+  }
+}
 .header__inner {
   height: inherit;
   display: flex;
   justify-content: space-between;
-  padding-right: rem(40);
-  padding-left: rem(40);
+  padding-right: rem(15);
+  padding-left: rem(15);
   align-items: center;
+  @include mq("md") {
+    padding-right: rem(40);
+    padding-left: rem(40);
+  }
 }
 .header__logo {
   width: rem(102);
