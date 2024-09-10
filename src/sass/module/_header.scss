@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .header {
-  height: rem(79);
+  height: rem(80);
   background-color: rgb(13, 41, 54, 0.68);
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 1000;
 
   @include mq("md") {
-    height: rem(91);
+    height: rem(92);
   }
 }
 .header__inner {
@@ -25,6 +25,18 @@
     padding-left: rem(40);
   }
 }
+
+.header__link {
+  align-items: center;
+  display: flex;
+  height: inherit;
+  width: rem(102);
+  @include mq("md") {
+    width: rem(133);
+  }
+}
+
+
 .header__logo {
   width: rem(102);
   aspect-ratio: 102/38;

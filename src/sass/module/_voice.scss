@@ -1,17 +1,10 @@
 @use "global" as *;
 
 .voice {
-  margin-top: rem(98);
+  margin-top: rem(82);
   position: relative;
-  margin-bottom: rem(100);
   @include mq("md") {
-    margin-top: rem(959);
-  }
-}
-.voice.voice {
-  @include mq("md") {
-    padding-right: rem(33);
-    padding-left: rem(33);
+    margin-top: rem(131);
   }
 }
 
@@ -23,9 +16,9 @@
     content: "";
     width: 26%;
     height: rem(138);
-    left: calc(50% - min(48.5vw, rem(620)));
+    left: calc(50% - min(48.5vw, rem(655)));
     top: rem(-108);
-    background: url(../../assets/images/common/decoration_3.png) center center /
+    background: url(/assets/images/common/decoration_3.png) center center /
       contain no-repeat;
   }
 }
@@ -38,32 +31,44 @@
     content: "";
     width: 20%;
     height: rem(162);
-    right: calc(50% - min(48.5vw, rem(619)));
-    bottom: rem(-86);
-    background: url(../../assets/images/common/decoration_4.png) center center /
+    right: calc(50% - min(48.5vw, rem(648)));
+    bottom: rem(-72);
+    background: url(/assets/images/common/decoration_4.png) center center /
       contain no-repeat;
   }
 }
+
 .voice__card__wrap {
-  margin-top: rem(40);
+  margin-top: rem(44);
+  max-width: rem(600);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(40);
   @include mq("md") {
     margin-top: rem(30);
-    display: flex;
-    justify-content: space-between;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
     gap: rem(40);
-    margin-inline: auto;
   }
 }
 .voice__card {
   position: relative;
-  width: rem(345);
-  padding: rem(21) rem(16) rem(20);
+  width: 100%;
+  padding: rem(18) rem(16) rem(23);
   background-color: $white;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+
   @include mq("md") {
     margin-inline: initial;
-    width: rem(529);
+
     padding: rem(24) rem(24) rem(24);
   }
 }
@@ -78,17 +83,22 @@
   overflow: hidden;
   z-index: 1;
   position: relative;
+  min-width: rem(151);
+  object-fit: cover;
+  height: auto;
 
   @include mq("md") {
     aspect-ratio: 180/140;
+    min-width: rem(180);
   }
 }
 
 .voice__card__img img {
+  aspect-ratio: 151/117;
   object-fit: cover;
   height: auto;
+  width: 100%;
 }
-
 
 .voice__card__title__container {
   display: flex;
@@ -104,7 +114,7 @@
   }
 }
 .voice__card__title__category__wrap {
-  margin-top:  rem(-3);
+  margin-top: rem(-3);
   @include mq("md") {
     display: flex;
     align-items: flex-end;
@@ -178,9 +188,9 @@
 
 .voice__button {
   text-align: center;
-  margin-top: rem(44);
+  margin-top: rem(40);
   margin-right: rem(2);
   @include mq("md") {
-    margin-top: rem(84);
+    margin-top: rem(76);
   }
 }

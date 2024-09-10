@@ -1,11 +1,20 @@
 @use "global" as *;
 
-.fv {
+.fv__inner {
   position: relative;
+  height: 100vh;
+  width: 100%;
 }
-.fv__img {
-  aspect-ratio: 375 / 667;
-  width: rem(375);
+.fv__image {
+  display: block;
+  height: 100vh;
+}
+
+.fv__img img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .fv__title__wrap {
@@ -43,6 +52,5 @@
   line-height: 1;
   @include mq("md") {
     padding-right: rem(43);
-
   }
 }

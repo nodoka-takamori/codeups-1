@@ -20,16 +20,23 @@ jQuery(function ($) {
     speed: 3000, // 切り替えの速度を1秒に設定
   });
 
+
   var swiper = new Swiper(".campaignSwiper", {
-    loop: true,//スライドをループ
-    speed: 500,//.5秒ごとにスライド
-    slidesPerView: "auto",//自動再生
+    loop: true, // スライドをループ
+    speed: 500, // 切り替え速度
+    slidesPerView: "auto", // スライドを自動調整
     autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
+      delay: 4000, // 4秒ごとに自動再生
+      disableOnInteraction: false, // ユーザー操作後も自動再生
       waitForTransition: false,
     },
+    navigation: {
+      nextEl: '.swiper-button-next', // 右ボタン
+      prevEl: '.swiper-button-prev', // 左ボタン
+    },
   });
+
+
 
   $(document).ready(function () {
     // 要素の取得とスピードの設定
