@@ -2,23 +2,33 @@
 
 .fv__inner {
   position: relative;
-  height: 100vh;
+  // height: 100vh;
+  height: 667px;
   width: 100%;
+  @include mq("md") {
+
+height: 768px;
+  }
 }
 .fv__image {
   display: block;
-  height: 100vh;
+  // height: 100vh;
+  height: 667px;
+  @include mq("md") {
+height: 768px;
+  }
 }
 
 .fv__img img {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
 }
 
 .fv__title__wrap {
-  top: 50.5%;
+  top: 49%;
   left: 53%;
   text-align: center;
   position: absolute;
@@ -38,7 +48,7 @@
   color: $white;
   @include mq("md") {
     font-size: rem(80);
-    padding-top: rem(11);
+    line-height:rem(111);
   }
 }
 
@@ -47,10 +57,12 @@
   font-size: rem(20);
   font-weight: $regular;
   color: $white;
-  padding-bottom: rem(15);
-  padding-right: rem(25);
+  text-indent: rem(-26);
+  // padding-bottom: rem(15);
+  // padding-right: rem(25);
   line-height: 1;
   @include mq("md") {
-    padding-right: rem(43);
+    text-indent: rem(-45);
+    // padding-right: rem(43);
   }
 }

@@ -1,5 +1,9 @@
 @use "global" as *;
 
+body.is-locked {
+  overflow: hidden;
+}
+
 .sp-nav {
   opacity: 0;
   visibility: hidden;

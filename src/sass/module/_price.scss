@@ -3,9 +3,13 @@
 .price {
   margin-top: rem(84);
   background-color: $light-blue;
+  padding-top: rem(75);
+  padding-bottom: rem(84);
   @include mq("md") {
     margin-top: rem(147);
     position: relative;
+    padding-top: rem(89);
+    padding-bottom: rem(104);
   }
 }
 .price::after {
@@ -22,20 +26,6 @@
   }
 }
 
-.price__inner {
-  padding-top: rem(75);
-  padding-bottom: rem(84);
-  padding-left: $padding-sp;
-  padding-right: $padding-sp;
-  margin-inline: auto;
-  @include mq("md") {
-    padding-top: rem(87);
-    padding-bottom: rem(104);
-    max-width: rem(1130); //1080+25+25
-    padding-left: $padding-pc;
-    padding-right: $padding-pc;
-  }
-}
 .price__container {
   margin-top: rem(29);
   display: flex;
@@ -116,7 +106,6 @@
     margin-top: rem(-2);
   }
 }
-
 
 .praice__photo img {
   aspect-ratio: 345 / 227;

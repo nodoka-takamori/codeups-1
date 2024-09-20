@@ -13,7 +13,7 @@
     font-size: rem(40);
   }
 }
-.section-header__title span {
+.section-header__title::first-letter {
   color: $blue;
 }
 

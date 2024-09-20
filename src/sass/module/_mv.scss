@@ -1,0 +1,50 @@
+@use "global" as *;
+
+.mv {
+  position: relative;
+  z-index: 1;
+}
+
+.mv__title__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  white-space: nowrap;
+  @include mq("md") {
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.mv__title {
+  font-size: rem(40);
+  font-weight: $regular;
+  color: $white;
+  font-family: "Lato", sans-serif;
+
+  @include mq("md") {
+    font-size: rem(80);
+    font-weight: $medium;
+  }
+}
+
+.mv__photo {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 375/460;
+  @include mq("md") {
+    aspect-ratio: 1440/548;
+  }
+}
+
+.mv__photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+}

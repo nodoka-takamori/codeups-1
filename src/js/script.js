@@ -4,6 +4,13 @@ jQuery(function ($) {
   $(".hamburger").on("click", function () {
     $(this).toggleClass("is-active"); // ハンバーガーメニューのアイコンを変化させる
     $(".js-sp-nav").toggleClass("is-active"); // メニューの表示/非表示を切り替える
+
+    // bodyタグに「is-locked」クラスを追加/削除してスクロールを無効化
+    if ($(".js-sp-nav").hasClass("is-active")) {
+      $("body").addClass("is-locked");
+    } else {
+      $("body").removeClass("is-locked");
+    }
     return false;
   });
 

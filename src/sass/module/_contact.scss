@@ -7,17 +7,7 @@
     margin-top: rem(145);
   }
 }
-.contact.contact {
-  padding-right: $padding-sp;
-  padding-left: $padding-sp;
-  margin-inline: auto;
-  margin-bottom: rem(105);
-  @include mq("md") {
-    padding-right: $padding-pc;
-    padding-left: $padding-pc;
-    margin-bottom: rem(160);
-  }
-}
+
 .contact::before {
   position: absolute;
   content: "";
@@ -30,21 +20,23 @@
   @include mq("md") {
     right: calc(50% - min(48.5vw, rem(692)));
     top: rem(-44);
-    width: 30%;
+    width: 24%;
     height: rem(138);
   }
 }
 
 .contact__container {
-  max-width: rem(295);
+  width: 85.66%;
+  max-width: rem(600);
   margin-inline: auto;
   @include mq("md") {
     display: flex;
     padding: rem(82) rem(50) rem(80);
     background-color: $white;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    margin-inline: auto;
+    margin-inline: 0;
     align-items: center;
+    width: 100%;
     max-width: rem(1080);
   }
 }
@@ -149,7 +141,7 @@
   font-weight: $regular;
   line-height: 0.8;
 }
-.contact__title span {
+.contact__title::first-letter {
   color: $blue;
 }
 .contact-header__subtitle {
