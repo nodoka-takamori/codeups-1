@@ -243,10 +243,9 @@
 }
 
 .campaign__button {
-  margin-top: rem(27);
+  margin-top: rem(24);
   text-align: center;
-  margin-right: rem(5);
-
+  padding-bottom: rem(3);
   @include mq("md") {
     margin-top: rem(67);
   }
