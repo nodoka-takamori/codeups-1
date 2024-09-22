@@ -10,7 +10,6 @@
 .fv__image {
   display: block;
   height: 100vh;
-
 }
 
 .fv__img img {
@@ -28,8 +27,8 @@
   z-index: 3;
   transform: translate(-50%, -51.5%);
   @include mq("md") {
-    top: 50%;
-    left: 51.5%;
+    top: 49.5%;
+    left: 50%;
   }
 }
 
@@ -37,9 +36,12 @@
   font-family: "Lato", sans-serif;
   font-size: rem(40);
   font-weight: $medium;
-  letter-spacing: 0.54em;
+  letter-spacing: rem(21);
+  text-indent: rem(-3);
   color: $white;
   @include mq("md") {
+    letter-spacing: rem(42);
+    text-indent: rem(42);
     font-size: rem(80);
     line-height: rem(111);
   }
@@ -53,6 +55,6 @@
   text-indent: rem(-26);
   line-height: 1;
   @include mq("md") {
-    text-indent: rem(-45);
+    text-indent: rem(-2);
   }
 }
