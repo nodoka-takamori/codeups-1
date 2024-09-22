@@ -1,12 +1,12 @@
 @use "global" as *;
 
 .price {
-  margin-top: rem(84);
+
   background-color: $light-blue;
   padding-top: rem(75);
   padding-bottom: rem(84);
   @include mq("md") {
-    margin-top: rem(147);
+
     position: relative;
     padding-top: rem(89);
     padding-bottom: rem(104);

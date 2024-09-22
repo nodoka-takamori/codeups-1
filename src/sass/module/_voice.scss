@@ -3,8 +3,10 @@
 .voice {
   margin-top: rem(80);
   position: relative;
+  padding-bottom: rem(84);
   @include mq("md") {
     margin-top: rem(133);
+    padding-bottom: rem(147);
   }
 }
 
@@ -32,7 +34,7 @@
     width: rem(71);
     height: rem(162);
     right: calc(50% - min(48.5vw, rem(540)));
-    bottom: rem(-72);
+    bottom: rem(76);
     background: url(/assets/images/common/decoration_4.png) center center /
       contain no-repeat;
   }
