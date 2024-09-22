@@ -3,24 +3,26 @@
 .contact {
   margin-top: rem(82);
   position: relative;
+  padding-bottom: rem(105);
   @include mq("md") {
     margin-top: rem(145);
+    padding-bottom: rem(158);
   }
 }
 
 .contact::before {
   position: absolute;
   content: "";
-  width: 37%;
+  width: rem(109);
   height: rem(50);
-  right: 0;
-  top: rem(-26);
+  right: calc(50% - min(48.5vw, rem(172)));
+  top: rem(-28);
   background: url(../../assets/images/common/decoration_5.png) center center /
     contain no-repeat;
   @include mq("md") {
-    right: calc(50% - min(48.5vw, rem(692)));
+    right: calc(50% - min(48.5vw, rem(670)));
     top: rem(-44);
-    width: 24%;
+    width: rem(301);
     height: rem(138);
   }
 }
@@ -52,7 +54,7 @@
 }
 .contact__contents__right {
   margin-inline: auto;
-  margin-top: rem(41);
+  margin-top: rem(46);
   @include mq("md") {
     width: 29.16%;
   }
@@ -123,7 +125,7 @@
 }
 
 .contact__contents__right {
-  margin-top: rem(51);
+  margin-top: rem(46);
   @include mq("md") {
     margin-top: 0;
   }
@@ -140,6 +142,10 @@
   font-family: $english-font-family;
   font-weight: $regular;
   line-height: 0.8;
+  text-indent: rem(-8);
+  @include mq("md") {
+    text-indent: rem(-3);
+  }
 }
 .contact__title::first-letter {
   color: $blue;
@@ -161,7 +167,7 @@
 }
 
 .contact__button {
-  margin-top: rem(38);
+  margin-top: rem(42);
   @include mq("md") {
     margin-top: rem(40);
   }

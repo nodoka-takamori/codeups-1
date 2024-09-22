@@ -23,14 +23,14 @@
 .blog::before {
   @include mq("md") {
     content: "";
-    aspect-ratio: 437 / 201;
     background-image: url(/assets/images/common/decoration_2.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     top: rem(25);
     left: calc(50% - min(48.5vw, rem(620)));
-    width: 30.3%;
+    width: rem(437);
+    height: rem(201);
     max-width: rem(437);
     z-index: 1;
   }
@@ -45,8 +45,12 @@
   }
 }
 .blog__title,
-.blog__title span,
 .blog__subtitle {
+  @include mq("md") {
+    color: $white;
+  }
+}
+.blog__title::first-letter {
   @include mq("md") {
     color: $white;
   }
@@ -89,10 +93,6 @@
   flex-direction: column;
   flex: 1;
   height: 100%;
-
-  // margin-top: rem(39);
-  @include mq("md") {
-  }
 }
 
 .blog-card__img {
@@ -156,10 +156,9 @@
 }
 .blog__button {
   text-align: center;
-  margin-top: rem(38);
-  margin-right: rem(2);
+  margin-top: rem(44);
+
   @include mq("md") {
-    margin-top: rem(80);
-    margin-right: rem(10);
+    margin-top: rem(83);
   }
 }

@@ -30,7 +30,7 @@ jQuery(function ($) {
 
   var swiper = new Swiper(".campaignSwiper", {
     loop: true, // スライドをループ
-    speed: 500, // 切り替え速度
+    speed: 2000, // 切り替え速度
     slidesPerView: "auto", // スライドを自動調整
     autoplay: {
       delay: 4000, // 4秒ごとに自動再生

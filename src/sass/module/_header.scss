@@ -36,15 +36,15 @@
   }
 }
 
-
 .header__logo {
   width: rem(102);
-  aspect-ratio: 102/38;
+  height: rem(38);
+
   position: relative;
   z-index: 999;
   @include mq("md") {
     width: rem(133);
-    aspect-ratio: 133/50;
+    height: rem(50);
   }
 }
 .header__pc-nav {

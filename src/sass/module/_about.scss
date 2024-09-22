@@ -2,14 +2,16 @@
 
 .about {
   margin-top: rem(80);
+  padding-bottom: rem(75);
   position: relative;
   @include mq("md") {
     margin-top: rem(136);
+    padding-bottom: rem(161);
   }
 }
 
 .about__photo__container {
-  margin-top: rem(28);
+  margin-top: rem(54);
   position: relative;
   max-width: rem(600);
   margin-inline: auto;
@@ -25,31 +27,45 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: rem(-143);
+    bottom: rem(-86);
     right: calc(50% - min(48.5vw, rem(636)));
     z-index: 50;
-    width: 17.4%;
-    aspect-ratio: 194/181;
+    width: rem(194);
+    height: rem(181);
+
+  }
+}
+
+.about__photo__wrap {
+  @include mq("md") {
+    margin-top: rem(119);
   }
 }
 
 .about__photo1 {
   display: block;
   width: 37.1%;
+  position: absolute;
   object-fit: cover;
   z-index: 2;
+  top: rem(-26);
+
   @include mq("md") {
     width: 37.03%;
+    top: rem(-80);
   }
+}
+
+.about__photo1 img,
+.about__photo2 img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .about__photo2 {
   display: block;
   aspect-ratio: 281/186;
   width: 81.44%;
-  position: absolute;
-  right: 0;
-  top: rem(26);
-  z-index: -1;
   object-fit: cover;
   margin-left: auto;
   @include mq("md") {
@@ -58,11 +74,11 @@
   }
 }
 .about__text__wrap {
-  margin-top: rem(57);
+  margin-top: rem(41);
   @include mq("md") {
     width: 77.77%;
     position: absolute;
-    top: 50.5%;
+    top: 38.5%;
     left: 57%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -87,7 +103,6 @@
   color: $blue;
   line-height: calc(40 / 40);
   white-space: nowrap;
-  margin-top: rem(56);
 
   @include mq("md") {
     font-size: rem(80);
@@ -107,16 +122,15 @@
 
   @include mq("md") {
     color: $white;
-    margin-top: rem(21);
+    margin-top: rem(27);
   }
 }
 
 .about__button {
-  margin-top: rem(52);
-  margin-right: rem(17);
+  margin-top: rem(48);
   text-align: center;
   @include mq("md") {
     margin-top: rem(42);
-    margin-left: rem(15);
+
   }
 }

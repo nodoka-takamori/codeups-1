@@ -3,12 +3,12 @@
 .information {
   padding-top: rem(76);
   padding-bottom: rem(85);
-  margin-top: rem(73);
+
   background-color: #ddf0f1;
   @include mq("md") {
     padding-top: rem(90);
     padding-bottom: rem(76);
-    margin-top: rem(219);
+
   }
 }
 
@@ -101,7 +101,5 @@
 .information__button {
   margin-top: rem(39);
   text-align: center;
-  @include mq("md") {
-    margin-right: rem(7);
-  }
+
 }
