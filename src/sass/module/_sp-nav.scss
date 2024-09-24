@@ -14,9 +14,6 @@ body.is-locked {
   background-color: $blue;
   height: 100vh;
   width: 100%;
-  padding-top: rem(21);
-  padding-right: rem(15);
-  padding-left: rem(15);
   transition: 0.5s ease-in;
 }
 
@@ -30,10 +27,27 @@ body.is-locked {
     display: none;
   }
 }
+.sp-nav__header__inner {
+  align-items: center;
+  background-color: $blue;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.sp-nav__inner {
+  margin-top: rem(104);
 
+}
 .sp-nav__contents {
   display: flex;
-  padding-top: rem(45);
+  padding-right: rem(15);
+  padding-left: rem(15);
+
 }
 .sp-nav__items {
   width: 100%;

@@ -112,6 +112,19 @@
       </div>
 
       <nav class="header__sp-nav sp-nav js-sp-nav">
+        <div class="header__inner sp-nav__header__inner">
+          <a href="index.html">
+            <img
+              src="./assets/images/common/logo.png"
+              alt=""
+              class="header__logo"
+          /></a>
+          <div class="header__drawer hamburger js-hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
         <div class="sp-nav__inner">
           <div class="sp-nav__contents">
             <ul class="sp-nav__items">
@@ -289,16 +302,16 @@
       </section>
       <section class="campaign">
         <div class="campaign__card__inner inner">
-        <div class="campaign__title__wrap">
-          <div class="campaign-title section-header">
-            <p class="section-header__title">Campaign</p>
-            <h2 class="section-header__subtitle">キャンペーン</h2>
+          <div class="campaign__title__wrap">
+            <div class="campaign-title section-header">
+              <p class="section-header__title">Campaign</p>
+              <h2 class="section-header__subtitle">キャンペーン</h2>
+            </div>
+            <div class="campaign__arrow__wrap">
+              <div class="campaign__left__button swiper-button-prev"></div>
+              <div class="campaign__right__button swiper-button-next"></div>
+            </div>
           </div>
-          <div class="campaign__arrow__wrap">
-            <div class="campaign__left__button swiper-button-prev"></div>
-            <div class="campaign__right__button swiper-button-next"></div>
-          </div>
-        </div>
 
           <div class="campaign__card__container">
             <div class="swiper campaignSwiper">
@@ -580,15 +593,13 @@
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
           <div class="campaign__button">
-          <a href="#" class="button">Viewmore<span class="arrow"></span></a>
+            <a href="#" class="button">Viewmore<span class="arrow"></span></a>
+          </div>
         </div>
-        </div>
-        
       </section>
       <section class="about">
         <div class="about__inner inner">
@@ -676,81 +687,82 @@
         </div>
       </section>
       <section class="blog">
-        <div class="blog-bg"></div>
-        <div class="blog__inner inner">
-          <div class="section-header">
-            <p class="blog__title section-header__title">Blog</p>
-            <h2 class="blog__subtitle section-header__subtitle">ブログ</h2>
-          </div>
-          <div class="blog__wrap">
-            <a href="#"
-              ><div class="blog-card">
-                <figure class="blog-card__img">
-                  <img
-                    src="./assets/images/common/blog_1.jpg"
-                    alt="珊瑚にたくさんのぷつぷつがついている"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
-                <div class="blog-card__body">
-                  <div class="blog-card__title__wrap">
-                    <time datetime="2023-11-17">2023.11/17</time>
-                    <h3 class="blog-card__title">ライセンス取得</h3>
+        <div class="blog__container">
+          <div class="blog__inner inner">
+            <div class="section-header">
+              <p class="blog__title section-header__title">Blog</p>
+              <h2 class="blog__subtitle section-header__subtitle">ブログ</h2>
+            </div>
+            <div class="blog__wrap">
+              <a href="#"
+                ><div class="blog-card">
+                  <figure class="blog-card__img">
+                    <img
+                      src="./assets/images/common/blog_1.jpg"
+                      alt="珊瑚にたくさんのぷつぷつがついている"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="blog-card__body">
+                    <div class="blog-card__title__wrap">
+                      <time datetime="2023-11-17">2023.11/17</time>
+                      <h3 class="blog-card__title">ライセンス取得</h3>
+                    </div>
+                    <p class="blog-card__text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                    </p>
                   </div>
-                  <p class="blog-card__text">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                </div>
-              </div></a
-            >
-            <a href="#">
-              <div class="blog-card">
-                <figure class="blog-card__img">
-                  <img
-                    src="./assets/images/common/blog_2.jpg"
-                    alt="ウミガメが海で泳いでいる"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
-                <div class="blog-card__body">
-                  <div class="blog-card__title__wrap">
-                    <time datetime="2023-11-17">2023.11/17</time>
-                    <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
+                </div></a
+              >
+              <a href="#">
+                <div class="blog-card">
+                  <figure class="blog-card__img">
+                    <img
+                      src="./assets/images/common/blog_2.jpg"
+                      alt="ウミガメが海で泳いでいる"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="blog-card__body">
+                    <div class="blog-card__title__wrap">
+                      <time datetime="2023-11-17">2023.11/17</time>
+                      <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
+                    </div>
+                    <p class="blog-card__text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                    </p>
                   </div>
-                  <p class="blog-card__text">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                </div>
-              </div></a
-            >
-            <a href="#">
-              <div class="blog-card">
-                <figure class="blog-card__img">
-                  <img
-                    src="./assets/images/common/blog_3.jpg"
-                    alt="カクレクマノミがイソギンチャクの中から顔を出している"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
-                <div class="blog-card__body">
-                  <div class="blog-card__title__wrap">
-                    <time datetime="2023-11-17">2023.11/17</time>
-                    <h3 class="blog-card__title">カクレクマノミ</h3>
+                </div></a
+              >
+              <a href="#">
+                <div class="blog-card">
+                  <figure class="blog-card__img">
+                    <img
+                      src="./assets/images/common/blog_3.jpg"
+                      alt="カクレクマノミがイソギンチャクの中から顔を出している"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                  <div class="blog-card__body">
+                    <div class="blog-card__title__wrap">
+                      <time datetime="2023-11-17">2023.11/17</time>
+                      <h3 class="blog-card__title">カクレクマノミ</h3>
+                    </div>
+                    <p class="blog-card__text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                    </p>
                   </div>
-                  <p class="blog-card__text">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="blog__button">
-            <a href="#" class="button">Viewmore<span class="arrow"></span></a>
+              </a>
+            </div>
+            <div class="blog__button">
+              <a href="#" class="button">Viewmore<span class="arrow"></span></a>
+            </div>
           </div>
         </div>
       </section>

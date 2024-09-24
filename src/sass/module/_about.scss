@@ -2,11 +2,9 @@
 
 .about {
   margin-top: rem(80);
-  padding-bottom: rem(75);
   position: relative;
   @include mq("md") {
     margin-top: rem(132);
-    padding-bottom: rem(161);
   }
 }
 
