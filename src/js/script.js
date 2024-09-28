@@ -14,7 +14,7 @@ jQuery(function ($) {
     return false;
   });
 
-  var swiper = new Swiper(".mySwiper", {
+  var swiper = new Swiper(".js-fv-Swiper", {
     autoplay: {
       delay: 2000, // 2秒ごとにスライド
       disableOnInteraction: false, // ユーザー操作後も自動再生を継続
@@ -28,7 +28,7 @@ jQuery(function ($) {
   });
 
 
-  var swiper = new Swiper(".campaignSwiper", {
+  var swiper = new Swiper(".js-campaign-Swiper", {
     loop: true, // スライドをループ
     speed: 2000, // 切り替え速度
     slidesPerView: "auto", // スライドを自動調整

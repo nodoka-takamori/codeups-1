@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.section-header {
+.section-header{
   text-align: center;
 }
 
@@ -10,7 +10,7 @@
   color: $black;
   font-family: $english-font-family;
   @include mq("md") {
-    font-size: rem(40);
+  font-size: rem(40);
   }
 }
 .section-header__title::first-letter {
@@ -22,4 +22,16 @@
   font-weight: $regular;
   color: $blue;
   font-family: $base-font-family;
+}
+
+.section-header__title--wh,
+.section-header__subtitle--wh {
+  @include mq("md") {
+    color: $white;
+  }
+}
+.section-header__title--wh::first-letter {
+  @include mq("md") {
+    color: $white;
+  }
 }

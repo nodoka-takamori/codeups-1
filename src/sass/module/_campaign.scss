@@ -8,8 +8,7 @@
   }
 }
 
-.campaign__title__wrap {
-  // position: relative;
+.campaign__title-wrap {
   width: 100%;
   margin-inline: auto;
   @include mq("md") {
@@ -17,7 +16,7 @@
     margin-inline: auto;
   }
 }
-.campaign__arrow__wrap {
+.campaign-swiper__button{
   display: none;
   @include mq("md") {
     display: flex;
@@ -28,7 +27,7 @@
   }
 }
 
-.campaign__left__button {
+.campaign-swiper__button--prev {
   background: url(/assets/images/common/left__arrow.png) center center / contain
     no-repeat;
   width: rem(80);
@@ -36,7 +35,7 @@
   aspect-ratio: 1/1;
 }
 
-.campaign__right__button {
+.campaign-swiper__button--next {
   background: url(/assets/images/common/right__arrow.png) center center /
     contain no-repeat;
   width: rem(80);
@@ -45,27 +44,26 @@
   max-width: rem(80);
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.campaign-swiper__button--next,
+.campaign-swiper__button--prev {
   @include mq("md") {
     position: inherit;
     margin-top: 0;
   }
 }
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.campaign-swiper__button--next::after,
+.campaign-swiper__button--prev::after {
   display: none;
 }
-.campaign__card__inner {
-  padding-left: $padding-sp;
-  padding-right: 0;
-  margin-right: 0;
-  margin-left: 0;
+// .campaign-inner {
+//   padding-left: $padding-sp;
+//   padding-right: 0;
+//   margin-right: 0;
+//   margin-left: 0;
+//   width: 100%;
+// }
 
-  width: 100%;
-}
-
-.campaign__card__container {
+.campaign__swiper {
   display: flex;
   flex-wrap: wrap; /* カードを横並びにしつつ折り返しを許可 */
   gap: rem(24); /* カード間のスペース */
@@ -80,7 +78,7 @@
   margin-left: 0;
 }
 
-.campaign-swiper-slide {
+.campaign__swiper-slide {
   margin-bottom: rem(14);
   margin-right: rem(24);
   max-width: rem(280);
@@ -91,155 +89,6 @@
     width: 23.125%;
     min-width: rem(333);
     margin-right: rem(40);
-  }
-}
-
-.campaign__card {
-  width: rem(280); /* カードの幅を固定 */
-  display: flex;
-  flex-direction: column; /* 縦に要素を積み上げる */
-  flex-grow: 1; /* カードを可能な限り同じ高さに引き伸ばす */
-  position: relative;
-  height: 100%;
-  @include mq("md") {
-    width: rem(333);
-  }
-}
-
-.campaign__card a {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.campaign__card__img {
-  overflow: hidden;
-  z-index: 1;
-  position: relative;
-  object-fit: cover;
-  height: auto;
-  aspect-ratio: 280 / 188;
-  width: 100%;
-  transition: transform 0.8s;
-
-  @include mq("md") {
-    aspect-ratio: 333 / 223;
-  }
-}
-.campaign__card__img img {
-  aspect-ratio: 280 / 188;
-  object-fit: cover;
-  height: auto;
-  width: 100%;
-}
-
-@include mq("md") {
-  .campaign__card:hover > a > figure > img {
-    transform: scale(1.2);
-    transition: transform 0.8s;
-  }
-}
-
-.campaign__card__body {
-  width: 100%;
-  padding: rem(16) rem(16) rem(19);
-
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
-  @include mq("md") {
-    padding: rem(22) rem(16) rem(28);
-  }
-}
-
-.campaign__card__title__wrap {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.campaign__card__category {
-  color: $blue;
-  font-size: rem(12);
-  font-weight: $regular;
-  font-family: $base-font-family;
-  border: solid 1px $blue;
-  text-align: center;
-  align-content: center;
-  height: rem(30);
-  max-width: rem(107);
-  @include mq("md") {
-    height: rem(34);
-    max-width: rem(115);
-  }
-}
-
-.campaign__card__title {
-  font-size: rem(16);
-  font-weight: $medium;
-  font-family: $base-font-family;
-  color: $black;
-  margin-top: rem(4);
-  padding-bottom: rem(8);
-}
-
-.campaign__card__text__wrap {
-  text-align: center;
-  padding-top: rem(8);
-  border-top: 1px solid $blue;
-  display: flex;
-  flex-direction: column;
-  @include mq("md") {
-    padding-top: rem(16);
-    padding-right: rem(20);
-  }
-}
-
-.campaign__card__text {
-  font-size: rem(14);
-  font-family: $base-font-family;
-  font-weight: $regular;
-  color: $black;
-  @include mq("md") {
-    font-size: rem(16);
-  }
-}
-
-.campaign__card__price__wrap {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.campaign__card__subprice {
-  color: #c94800;
-  text-decoration: line-through;
-  text-decoration-thickness: rem(3);
-}
-.campaign__card__subprice span {
-  font-family: "Lato", sans-serif;
-  font-size: rem(20);
-  font-weight: $bold;
-  color: $black;
-  margin-left: rem(19);
-  line-height: 2.4;
-  @include mq("md") {
-    font-size: rem(24);
-    margin-left: rem(17);
-  }
-}
-
-.campaign__card__price {
-  font-family: "Lato", sans-serif;
-  font-size: rem(32);
-  font-weight: $bold;
-  color: $blue;
-  margin-right: rem(18);
-
-  @include mq("md") {
-    font-size: rem(40);
-    margin-right: 0;
   }
 }
 

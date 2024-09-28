@@ -1,12 +1,10 @@
 @use "global" as *;
 
 .price {
-
   background-color: $light-blue;
   padding-top: rem(75);
   padding-bottom: rem(84);
   @include mq("md") {
-
     position: relative;
     padding-top: rem(89);
     padding-bottom: rem(104);
@@ -39,57 +37,12 @@
     max-width: rem(1080);
   }
 }
-.price__list__contents {
+.price__contents {
   @include mq("md") {
     width: 45.72%;
   }
 }
-.price__list {
-  color: $black;
-  font-family: $base-font-family;
-  margin-top: rem(40);
-  @include mq("md") {
-    margin-top: 0;
-  }
-}
-.price__list:not(:first-child) {
-  margin-top: rem(42);
-  @include mq("md") {
-    margin-top: rem(41);
-  }
-}
 
-.price__list__title {
-  font-weight: $bold;
-  font-size: rem(16);
-  line-height: 1.6;
-  border-bottom: 1px solid $blue;
-}
-.price__items {
-  display: flex;
-  justify-content: space-between;
-}
-.price__list dt {
-  font-size: rem(14);
-  font-weight: $regular;
-  line-height: calc(24 / 14);
-  margin-top: rem(8);
-  margin-right: rem(10);
-  @include mq("md") {
-    font-size: rem(16);
-    line-height: calc(24 / 16);
-  }
-}
-.price__list dd {
-  font-size: rem(14);
-  font-weight: $regular;
-  line-height: calc(24 / 14);
-  margin-top: rem(8);
-  @include mq("md") {
-    font-size: rem(17);
-    line-height: 1.4;
-  }
-}
 
 .price__photo {
   overflow: hidden;
@@ -104,16 +57,6 @@
     aspect-ratio: 492 / 746;
     max-width: rem(746);
     margin-top: rem(-2);
-  }
-}
-
-.praice__photo img {
-  aspect-ratio: 345 / 227;
-  object-fit: cover;
-  height: auto;
-  width: 100%;
-  @include mq("md") {
-    aspect-ratio: 492 / 746;
   }
 }
 

@@ -48,14 +48,9 @@
     height: rem(50);
   }
 }
-.header__pc-nav {
+.header__menu {
   display: none;
   @include mq("md") {
     display: block;
-  }
-}
-.header__drawer {
-  @include mq("md") {
-    display: none;
   }
 }
