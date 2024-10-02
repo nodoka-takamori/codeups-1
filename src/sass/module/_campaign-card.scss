@@ -27,7 +27,6 @@
   aspect-ratio: 280 / 188;
   width: 100%;
   transition: transform 0.8s;
-
   @include mq("md") {
     aspect-ratio: 333 / 223;
   }
@@ -37,12 +36,12 @@
   object-fit: cover;
   height: auto;
   width: 100%;
+  transition: transform 0.8s;
 }
 
 @include mq("md") {
-  .campaign-card:hover > a > figure > img {
+  .campaign-card a:hover > figure > img {
     transform: scale(1.2);
-    transition: transform 0.8s;
   }
 }
 
@@ -52,7 +51,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-
   @include mq("md") {
     padding: rem(26) rem(16) rem(28);
   }
