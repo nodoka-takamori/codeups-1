@@ -1,14 +1,10 @@
 @use "global" as *;
 
 .about {
-  margin-top: rem(80);
   position: relative;
-  @include mq("md") {
-    margin-top: rem(132);
-  }
 }
 
-.about-photo__container {
+.about__photo-container {
   margin-top: rem(54);
   position: relative;
   @include mq("md") {
@@ -16,7 +12,7 @@
   }
 }
 
-.about-photo__container::before {
+.about__photo-container::before {
   @include mq("md") {
     content: "";
     background-image: url(/assets/images/common/decoration_1.png);
@@ -31,7 +27,7 @@
   }
 }
 
-.about-photo__wrap {
+.about__photo-wrap {
   max-width: rem(600);
   margin-inline: auto;
   @include mq("md") {
@@ -70,7 +66,7 @@
     top: rem(77);
   }
 }
-.about-text__contents {
+.about__text-contents {
   margin-top: rem(41);
   @include mq("md") {
     width: 77.77%;
@@ -93,7 +89,7 @@
   }
 }
 
-.about-text__title {
+.about__text-title {
   font-family: $english-font-family;
   font-size: rem(40);
   font-weight: $regular;

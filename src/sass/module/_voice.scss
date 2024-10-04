@@ -1,13 +1,7 @@
 @use "global" as *;
 
 .voice {
-  margin-top: rem(80);
   position: relative;
-  padding-bottom: rem(84);
-  @include mq("md") {
-    margin-top: rem(133);
-    padding-bottom: rem(147);
-  }
 }
 
 .voice::before {
@@ -34,7 +28,7 @@
     width: rem(71);
     height: rem(162);
     right: calc(50% - min(48.5vw, rem(540)));
-    bottom: rem(76);
+    bottom: rem(-74);
     background: url(/assets/images/common/decoration_4.png) center center /
       contain no-repeat;
   }

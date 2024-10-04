@@ -1,7 +1,7 @@
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
 
-  $(".hamburger").on("click", function () {
+  $(".header__hamburger").on("click", function () {
     $(this).toggleClass("is-active"); // ハンバーガーメニューのアイコンを変化させる
     $(".js-sp-nav").toggleClass("is-active"); // メニューの表示/非表示を切り替える
 
@@ -12,6 +12,16 @@ jQuery(function ($) {
       $("body").removeClass("is-locked");
     }
     return false;
+  });
+
+  // ハンバーガーメニューとヘッダーの要素を取得
+  const hamburger = document.getElementById("hamburger");
+  const header = document.querySelector(".header");
+
+  // ハンバーガーメニューがクリックされたときの処理
+  hamburger.addEventListener("click", function () {
+    // headerにis-activeクラスをトグル（追加/削除）する
+    header.classList.toggle("is-active");
   });
 
   var swiper = new Swiper(".js-fv-Swiper", {
@@ -27,7 +37,6 @@ jQuery(function ($) {
     speed: 3000, // 切り替えの速度を1秒に設定
   });
 
-
   var swiper = new Swiper(".js-campaign-Swiper", {
     loop: true, // スライドをループ
     speed: 2000, // 切り替え速度
@@ -38,43 +47,40 @@ jQuery(function ($) {
       waitForTransition: false,
     },
     navigation: {
-      nextEl: '.swiper-button-next', // 右ボタン
-      prevEl: '.swiper-button-prev', // 左ボタン
+      nextEl: ".swiper-button-next", // 右ボタン
+      prevEl: ".swiper-button-prev", // 左ボタン
     },
   });
-
-
 
   $(document).ready(function () {
     // 要素の取得とスピードの設定
     let box = $(".js-colorbox"),
-        speed = 700;
+      speed = 700;
     // .colorboxの付いた全ての要素に対して下記の処理を行う
     box.each(function () {
-        $(this).append('<div class="is-color"></div>');
-        var color = $(this).find($(".is-color")),
-            image = $(this).find("img");
-        var counter = 0;
-        image.css("opacity", "0");
-        color.css("width", "0%");
-        // スクロールイベントで背景色が画面に現れたかどうかチェック
-        $(window).on("scroll", function () {
-            var windowBottom = $(window).scrollTop() + $(window).height();
-            var colorTop = color.offset().top;
-            if (windowBottom > colorTop && counter == 0) {
-                color.delay(200).animate({ width: "100%" }, speed, function () {
-                    image.css("opacity", "1");
-                    $(this).css({ left: "0", right: "auto" });
-                    $(this).animate({ width: "0%" }, speed);
-                });
-                counter = 1;
-            }
-        });
+      $(this).append('<div class="is-color"></div>');
+      var color = $(this).find($(".is-color")),
+        image = $(this).find("img");
+      var counter = 0;
+      image.css("opacity", "0");
+      color.css("width", "0%");
+      // スクロールイベントで背景色が画面に現れたかどうかチェック
+      $(window).on("scroll", function () {
+        var windowBottom = $(window).scrollTop() + $(window).height();
+        var colorTop = color.offset().top;
+        if (windowBottom > colorTop && counter == 0) {
+          color.delay(200).animate({ width: "100%" }, speed, function () {
+            image.css("opacity", "1");
+            $(this).css({ left: "0", right: "auto" });
+            $(this).animate({ width: "0%" }, speed);
+          });
+          counter = 1;
+        }
+      });
     });
-});
+  });
 
-
-  var pagetop = $("#button__top");
+  var pagetop = $("#button-top");
   pagetop.hide();
   $(window).scroll(function () {
     if ($(this).scrollTop() > 80) {
@@ -84,4 +90,3 @@ jQuery(function ($) {
     }
   });
 });
-

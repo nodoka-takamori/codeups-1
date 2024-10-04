@@ -1,20 +1,11 @@
-@use 'global' as *;
+@use "global" as *;
 
 .blog-cards {
-  width: 100%;
-  max-width: rem(600);
-  margin-inline: auto;
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: rem(40);
   @include mq("md") {
-    width: 100%;
-    max-width: rem(1129);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
   }
 }
-

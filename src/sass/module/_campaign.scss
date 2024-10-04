@@ -1,11 +1,6 @@
 @use "global" as *;
 .campaign {
-  margin-top: rem(36);
   overflow: hidden;
-  @include mq("md") {
-    margin-top: rem(110);
-    padding-left: 0;
-  }
 }
 
 .campaign__title-wrap {
