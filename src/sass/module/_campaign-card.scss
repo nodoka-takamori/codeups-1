@@ -145,31 +145,52 @@
     margin-right: 0;
   }
 }
-// .campaign-card__下層{
-//   font-size:  rem(24);
-// }
+
+//////////////
 .campaign-card--big {
   @include mq("md") {
     width: rem(520);
   }
 }
-.campaign-card__title--fz {
+.campaign-card__body--big {
   @include mq("md") {
-    font-size: rem(24);
+    padding: rem(21) rem(25) rem(44);
   }
 }
-// .campaign-card--big.campaign-card__title {
-//   @include mq("md") {
-//     font-size: rem(24);
-//   }
-// }
-.campaign-card__text-wrapper {
+.campaign-card__title--big {
+  @include mq("md") {
+    font-size: rem(24);
+    margin-top: rem(6);
+    padding-bottom: 0;
+  }
+}
+.campaign-card__text-wrap--big {
+  @include mq("md") {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: rem(28);
+    padding-right: rem(0);
+  }
+}
+.campaign-card__text-wrapper--big {
   display: none;
   @include mq("md") {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     margin-top: rem(15);
+  }
+}
+.campaign-card__price-wrap--big {
+  @include mq("md") {
+    justify-content: center;
+    gap: rem(40);
+  }
+}
+.campaign-card__subprice--big span{
+  @include mq("md") {
+    margin-left: 0;
   }
 }
 .campaign-card__text-info {
@@ -178,7 +199,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-top: rem(15);
+    margin-top: rem(-13);
   }
 }
 .campaign-card__text-info p {
@@ -191,14 +212,15 @@
   font-size: rem(16);
   font-weight: $bold;
   color: $blue;
-  margin-top: rem(32);
+  margin-top: rem(38);
+  letter-spacing: 0.5px;
 }
 .campaign-card__contact-info {
   font-family: $base-font-family;
   font-size: rem(14);
   font-weight: $regular;
   color: $blue;
-  margin-top: rem(7);
+  margin-top: rem(1);
 }
 .campaign-card__button {
   @include mq("md") {
@@ -206,154 +228,3 @@
     margin-top: rem(16);
   }
 }
-//////////////////////
-///
-///
-// .campaign-card {//ブロック
-//   width: rem(280); /* カードの幅を固定 */
-//   display: flex;
-//   flex-direction: column; /* 縦に要素を積み上げる */
-//   flex-grow: 1; /* カードを可能な限り同じ高さに引き伸ばす */
-//   position: relative;
-//   height: 100%;
-//   @include mq("md") {
-//     width: rem(333);
-//   }
-// }
-
-// .campaign-card a {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-// }
-
-// .campaign__card__img {
-//   overflow: hidden;
-//   z-index: 1;
-//   position: relative;
-//   object-fit: cover;
-//   height: auto;
-//   aspect-ratio: 280 / 188;
-//   width: 100%;
-//   transition: transform 0.8s;
-
-//   @include mq("md") {
-//     aspect-ratio: 333 / 223;
-//   }
-// }
-// .campaign__card__img img {
-//   aspect-ratio: 280 / 188;
-//   object-fit: cover;
-//   height: auto;
-//   width: 100%;
-// }
-
-// @include mq("md") {
-//   .campaign__card:hover > a > figure > img {
-//     transform: scale(1.2);
-//     transition: transform 0.8s;
-//   }
-// }
-
-// .campaign__card__body {
-//   width: 100%;
-//   padding: rem(16) rem(16) rem(19);
-
-//   display: flex;
-//   flex-direction: column;
-//   flex: 1;
-
-//   @include mq("md") {
-//     padding: rem(22) rem(16) rem(28);
-//   }
-// }
-
-// .campaign__card__title__wrap {
-//   display: flex;
-//   flex-direction: column;
-//   flex: 1;
-// }
-
-// .campaign__card__category {
-//   color: $blue;
-//   font-size: rem(12);
-//   font-weight: $regular;
-//   font-family: $base-font-family;
-//   border: solid 1px $blue;
-//   text-align: center;
-//   align-content: center;
-//   height: rem(30);
-//   max-width: rem(107);
-//   @include mq("md") {
-//     height: rem(34);
-//     max-width: rem(115);
-//   }
-// }
-
-// .campaign__card__title {
-//   font-size: rem(16);
-//   font-weight: $medium;
-//   font-family: $base-font-family;
-//   color: $black;
-//   margin-top: rem(4);
-//   padding-bottom: rem(8);
-// }
-
-// .campaign__card__text__wrap {
-//   text-align: center;
-//   padding-top: rem(8);
-//   border-top: 1px solid $blue;
-//   display: flex;
-//   flex-direction: column;
-//   @include mq("md") {
-//     padding-top: rem(16);
-//     padding-right: rem(20);
-//   }
-// }
-
-// .campaign__card__text {
-//   font-size: rem(14);
-//   font-family: $base-font-family;
-//   font-weight: $regular;
-//   color: $black;
-//   @include mq("md") {
-//     font-size: rem(16);
-//   }
-// }
-
-// .campaign__card__price__wrap {
-//   display: flex;
-//   align-items: flex-end;
-//   justify-content: space-between;
-// }
-
-// .campaign__card__subprice {
-//   color: #c94800;
-//   text-decoration: line-through;
-//   text-decoration-thickness: rem(3);
-// }
-// .campaign__card__subprice span {
-//   font-family: "Lato", sans-serif;
-//   font-size: rem(20);
-//   font-weight: $bold;
-//   color: $black;
-//   margin-left: rem(19);
-//   line-height: 2.4;
-//   @include mq("md") {
-//     font-size: rem(24);
-//     margin-left: rem(17);
-//   }
-// }
-
-// .campaign__card__price {
-//   font-family: "Lato", sans-serif;
-//   font-size: rem(32);
-//   font-weight: $bold;
-//   color: $blue;
-//   margin-right: rem(18);
-
-//   @include mq("md") {
-//     font-size: rem(40);
-//     margin-right: 0;
-//   }
-// }

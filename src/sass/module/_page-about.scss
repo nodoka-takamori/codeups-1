@@ -1,9 +1,40 @@
 @use "global" as *;
+.page-about__inner {
+  position: relative;
+}
 
-.page-about__contact {
-  margin-top: rem(80);
+.page-about__inner::before {
+  position: absolute;
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  left: rem(15);
+  top: rem(-24);
+  background: url(../../assets/images/common/decoration_3.png) center center /
+    contain no-repeat;
   @include mq("md") {
-    margin-top: rem(100);
+    left: calc(50% - min(48.5vw, rem(621)));
+    top: rem(-153);
+    width: rem(301);
+    height: rem(138);
+  }
+}
+.page-about__inner::after {
+  @include mq("md") {
+    position: absolute;
+    content: "";
+    background: url(../../assets/images/common/decoration_5.png) center center /
+      contain no-repeat;
+    right: calc(50% - min(48.5vw, rem(641)));
+    bottom: rem(-172);
+    width: rem(301);
+    height: rem(138);
+  }
+}
+.page-about__contact {
+  margin-top: rem(104);
+  @include mq("md") {
+    margin-top: rem(141);
   }
 }
 .page-about__footer {

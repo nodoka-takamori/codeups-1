@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .page-campaign {
-  margin-top: rem(83);
+  margin-top: rem(50);
   position: relative;
   @include mq("md") {
-    margin-top: rem(178);
+    margin-top: rem(150);
   }
 }
 .page-campaign::before {
@@ -25,12 +25,12 @@
 }
 
 .page-campaign__tags-container {
-  // flex-wrap: wrap;
-  gap: rem(16) rem(32);
+  gap: rem(16) rem(22);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   @include mq("md") {
     display: flex;
+  gap: rem(16) rem(31);
   }
 }
 
@@ -43,7 +43,7 @@
   font-weight: 400;
   line-height: 1.571;
   max-width: rem(162);
-  padding: rem(6) 0;
+  padding: rem(5) 0;
   position: relative;
   text-align: center;
   text-transform: uppercase;
@@ -57,7 +57,7 @@
   transition: 0.3s ease-in-out;
 }
 .page-campaign__layout {
-  margin-top: rem(56);
+  margin-top: rem(40);
   @include mq("md") {
     margin-top: rem(39);
   }
@@ -68,45 +68,33 @@
   width: rem(280);
   display: flex;
   flex-direction: column;
-  gap: rem(40);
+  gap: rem(38);
   @include mq("md") {
     width: 100%;
     display: grid;
-    gap: rem(40);
+    gap: rem(79) rem(40);
     grid-template-columns: repeat(2, 1fr);
   }
 }
 .page-campaign__card {
-  //ブロック
-  // width: rem(280); /* カードの幅を固定 */
-  // display: flex;
-  // flex-direction: column; /* 縦に要素を積み上げる */
-  // flex-grow: 1; /* カードを可能な限り同じ高さに引き伸ばす */
-  // position: relative;
-  // height: 100%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  // @include mq("md") {
-  //   width: rem(520);
-  // }
 }
 
 .page-campaign__contact {
-  margin-top: rem(80);
+  margin-top: rem(107);
   @include mq("md") {
-    margin-top: rem(100);
+    margin-top: rem(142);
   }
 }
 .page-campaign__footer {
-  margin-top: rem(100);
+  margin-top: rem(104);
   @include mq("md") {
     margin-top: rem(160);
   }
 }
 
 .page-campaign__pagination {
-  margin-top: rem(33);
-  // margin-top: rem(67);
-  // text-align: center;
+  margin-top: rem(80);
 }
 .pagination {
   display: flex;
@@ -119,34 +107,19 @@
   float: left;
   width: rem(38);
   height: rem(38);
-  // align-items: center;
   display: grid;
   place-items: center;
-  // padding: 6px 15px;
   text-decoration: none;
   transition: background-color 0.3s;
   border: 1px solid $blue;
-  // margin: 0 6px;
 }
 .pagination__button--prev {
   margin-right: rem(20);
   margin-left: 0;
-  color: $blue;
-  float: left;
-  // padding: 6px 15px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  border: 1px solid $blue;
 }
 .pagination__button--next {
   margin-left: rem(20);
   margin-right: 0;
-  color: $blue;
-  float: left;
-  // padding: 6px 15px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  border: 1px solid $blue;
 }
 .pagination a.active {
   background-color: $blue;
@@ -158,11 +131,6 @@
 }
 
 .pagination a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: $blue;
+  color: $white;
 }
-// .pagination a{
-//   font-family: "Lato", sans-serif;
-//   font-size: rem(16);
-//   font-weight: $bold;
-//   color: $blue;
-// }
