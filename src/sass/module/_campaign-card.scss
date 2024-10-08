@@ -1,6 +1,7 @@
-@use 'global' as *;
+@use "global" as *;
 
-.campaign-card {//ブロック
+.campaign-card {
+  //ブロック
   width: rem(280); /* カードの幅を固定 */
   display: flex;
   flex-direction: column; /* 縦に要素を積み上げる */
@@ -12,7 +13,7 @@
   }
 }
 
-.campaign-card a {
+.campaign-card__layout {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -144,11 +145,70 @@
     margin-right: 0;
   }
 }
+// .campaign-card__下層{
+//   font-size:  rem(24);
+// }
+.campaign-card--big {
+  @include mq("md") {
+    width: rem(520);
+  }
+}
+.campaign-card__title--fz {
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+// .campaign-card--big.campaign-card__title {
+//   @include mq("md") {
+//     font-size: rem(24);
+//   }
+// }
+.campaign-card__text-wrapper {
+  display: none;
+  @include mq("md") {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: rem(15);
+  }
+}
+.campaign-card__text-info {
+  display: none;
+  @include mq("md") {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: rem(15);
+  }
+}
+.campaign-card__text-info p {
+  text-align: initial;
+  color: $black;
+}
 
-
+.campaign-card__day {
+  font-family: "Lato", sans-serif;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $blue;
+  margin-top: rem(32);
+}
+.campaign-card__contact-info {
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: $regular;
+  color: $blue;
+  margin-top: rem(7);
+}
+.campaign-card__button {
+  @include mq("md") {
+    display: block;
+    margin-top: rem(16);
+  }
+}
 //////////////////////
-/// 
-/// 
+///
+///
 // .campaign-card {//ブロック
 //   width: rem(280); /* カードの幅を固定 */
 //   display: flex;

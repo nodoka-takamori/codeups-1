@@ -1,41 +1,40 @@
 @use "global" as *;
 
-.notfound__container {
+.notfound {
   background-color: $blue;
   box-shadow: 1px 0 0 $blue;
-  padding-top: rem(80);
+  padding-top: rem(151);
   padding-bottom: rem(40);
+  position: relative;
+  z-index: -1;
   @include mq("md") {
-    padding-top: rem(147);
+    padding-top: rem(205);
     padding-bottom: rem(148);
   }
 }
 
-.notfonud__inner {
-  position: relative;
-}
-
-.notfound__inner::before {
+.notfound::before {
   position: absolute;
   content: "";
-  width: 91%;
-  height: 28%;
-  left: 4%;
-  top: 1%;
+  width: rem(345);
+  height: rem(345);
+  left: calc(50% - min(48.5vw, rem(172)));
+  top: rem(82);
   background: url(../../assets/images/common/whale.png) center center / contain
     no-repeat;
   z-index: 1;
   @include mq("md") {
-    width: 80%;
-    height: 42%;
-    left: -3%;
-    top: 6%;
+    width: rem(698);
+    height: rem(698);
+    left: calc(50% - min(48.5vw, rem(541)));
+    top: rem(94);
   }
 }
 
-.notfound__text__wrap {
+.notfound__text-wrap {
   text-align: center;
-
+  position: relative;
+  z-index: 3;
   margin-top: rem(73);
   @include mq("md") {
     margin-top: rem(60);
@@ -48,8 +47,8 @@
   color: $white;
   font-family: "Lato", sans-serif;
   text-align: center;
-  letter-spacing: rem(45);
-  text-indent: rem(45);
+  letter-spacing: rem(42);
+  text-indent: rem(38);
 
   @include mq("md") {
     font-size: rem(173);
@@ -78,5 +77,11 @@
   margin-top: rem(-1);
   @include mq("md") {
     margin-top: rem(-1);
+  }
+}
+.notfound__footer.notfound__footer {
+  padding-top: rem(54);
+  @include mq("md") {
+    padding-top: rem(88);
   }
 }

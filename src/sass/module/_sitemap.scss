@@ -1,113 +1,110 @@
 @use "global" as *;
 
-.sitemap__container {
-  margin-top: rem(42);
+.sitemap {
+  margin-top: rem(77);
+  position: relative;
   @include mq("md") {
-    margin-top: rem(153);
+    margin-top: rem(173);
+  }
+}
+.sitemap::before {
+  position: absolute;
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  left: rem(15);
+  top: rem(-21);
+  background: url(../../assets/images/common/decoration_3.png) center center /
+    contain no-repeat;
+  @include mq("md") {
+    display: none;
   }
 }
 
-// .sitemap__inner.sitemap__inner {
-//   // padding-right: $padding-sp;
-//   // padding-left: $padding-sp;
-//   max-width: rem(1130);
-// }
-
-.sitemap-nav__contents {
+.sitemap__nav-contents {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   @include mq("md") {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.sitemap-nav__items {
-  width: 100%;
-  margin-top: rem(36);
-  @include mq("md") {
-    margin-top: rem(20);
-  }
-}
-.sitemap-nav__item {
+
+
+.sitemap__nav-item {
   color: $black;
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
   padding-left: rem(24);
-  @include mq("md") {
-    // padding-left: rem(32);
-  }
 }
 
-.sitemap-nav__item:hover {
+.sitemap__nav-item:hover {
   opacity: 0.7;
   transition: 0.5s;
 }
-.is-sp {
-  display: block;
-}
-.sitemap-nav__item:not(:first-child) {
+
+.sitemap__nav-item:not(:first-child) {
   margin-top: rem(18);
   @include mq("md") {
     margin-top: rem(19);
   }
 }
-
-.sitemap-nav__category {
+.sitemap__nav-item--main {
   font-weight: bold;
-  padding-left: rem(2);
+  padding-left: rem(22);
   display: flex;
+  position: relative;
   @include mq("md") {
+    padding-left: rem(22);
     text-wrap: nowrap;
   }
 }
-
-.sitemap-nav__category img {
-  width: rem(17);
-  aspect-ratio: 1/1;
-  margin-right: rem(3);
-  margin-top: rem(3);
+.sitemap__nav-item--main::before {
+  position: absolute;
+  content: "";
+  width: rem(18);
+  height: rem(18);
+  left: 0;
+  top: rem(2);
+  background-size: contain;
+  background: url(../../assets/images/common/starfish_black.png);
 }
-
-.sitemap-nav__category:not(:first-child) {
+.sitemap__nav-item--main:not(:first-child) {
   margin-top: rem(36);
   line-height: 1.2;
   @include mq("md") {
     margin-top: rem(38);
   }
 }
-.sitemap-nav__items_1 {
+
+.sitemap__nav-items--first {
   order: 1;
 }
-.sitemap-nav__items_2 {
+.sitemap__nav-items--second {
   order: 3;
-  margin-top: rem(35);
+  margin-top: rem(13);
   @include mq("md") {
+    margin-top: 0;
     order: 2;
-    padding-left: rem(38);
+    padding-left: rem(41);
   }
 }
-.sitemap-nav__items_3 {
+.sitemap__nav-items--third {
   order: 1;
-  margin-top: rem(36);
-  padding-left: rem(20);
+  padding-left: rem(22);
   @include mq("md") {
-    padding-left: rem(63);
+    margin-top: 0;
     order: 3;
+    padding-left: rem(64);
   }
 }
-.sitemap-nav__items_4 {
+.sitemap__nav-items--fourth {
   order: 4;
-  margin-top: rem(36);
-  padding-left: rem(20);
+  margin-top: rem(14);
+  padding-left: rem(22);
   @include mq("md") {
     padding-left: rem(87);
-  }
-}
-
-.is-sp {
-  display: block;
-  @include mq("md") {
-    display: none;
+    margin-top: 0;
   }
 }
 
@@ -115,5 +112,12 @@
   margin-top: rem(112);
   @include mq("md") {
     margin-top: rem(138);
+  }
+}
+
+.sitemap__footer {
+  margin-top: rem(104);
+  @include mq("md") {
+    margin-top: rem(162);
   }
 }
