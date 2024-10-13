@@ -27,7 +27,6 @@
   }
 }
 
-
 // .about__photo-wrap--sub img {
 //   width: rem(345);
 //   object-fit: cover;
@@ -128,18 +127,28 @@
 }
 ///////////
 
-.about__photo-container--sub.about__photo-container--sub {
+// .about__photo-container--sub.about__photo-container--sub {
+//   margin-top: 0;
+// }
+.about__photo-container--sub.about__photo-container--sub{
   margin-top: 0;
+  @include mq("md") {
+    margin-top: rem(119);
+  }
 }
 .about__photo-container--sub::before {
   display: none;
 }
-.about__photo-wrap {
-  max-width: rem(600);
-  margin-inline: auto;
-  @include mq("md") {
-    max-width: rem(1080);
-  }
+// .about__photo-wrap {
+//   max-width: rem(600);
+//   margin-inline: auto;
+//   @include mq("md") {
+//     max-width: rem(1080);
+//   }
+// }
+.about__photo2--sub {
+  aspect-ratio: 345/228;
+  width: 100%;
 }
 .about__photo1--sub {
   display: none;
@@ -151,14 +160,10 @@
     z-index: 2;
   }
 }
-.about__text-contents--sub {
-  margin-top: rem(61);
-}
-.about__text-title--sub.about__text-title--sub {
-  width: 77.77%;
+.about__text-title--sub {
   position: absolute;
-  top: rem(66);
-  left: rem(157);
+  top: 15.5%;
+  left: 35%;
   transform: translate(-50%, -50%);
   z-index: 5;
   margin-top: 0;
@@ -169,15 +174,48 @@
   line-height: calc(40 / 40);
   white-space: nowrap;
   @include mq("md") {
-    width: auto;
-    top: rem(66);
-    left: rem(331);
+    position: initial;
     font-size: rem(80);
     line-height: calc(100 / 80);
     color: $white;
     margin-top: rem(-9);
   }
+  }
+
+.about__text-contents--sub.about__text-contents--sub{
+  margin-top: rem(59);
+  @include mq("md") {
+width: 77.77%;
+  position: absolute;
+  top: 38.5%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin-top: 0;
+  }
 }
+// .about__text-contents--sub {
+//   margin-top: rem(61);
+// }
+// .about__text-title--sub.about__text-title--sub {
+//
+//   @include mq("md") {
+//     width: auto;
+//     top: rem(66);
+//     left: rem(331);
+//     font-size: rem(80);
+//     line-height: calc(100 / 80);
+//     color: $white;
+//     margin-top: rem(-9);
+//   }
+// }
 .about__text--sub.about__text--sub {
   margin-top: rem(-22);
+  @include mq("md") {
+    margin-top: 0;
+  }
 }

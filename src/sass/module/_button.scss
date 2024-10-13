@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   margin-inline: auto;
-
   background: $blue;
   border: 1px solid $blue;
   border-radius: 0;
@@ -19,7 +18,9 @@
   position: relative;
   z-index: 1;
 }
-
+.button--send.button--send {
+  padding: rem(15) rem(61) rem(15);
+}
 .button::after {
   background: $white;
   content: "";

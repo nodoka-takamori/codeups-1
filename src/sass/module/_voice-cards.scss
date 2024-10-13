@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 .voice-cards {
   max-width: rem(600);
@@ -14,9 +14,15 @@
   }
 }
 
-.voice-cards__item{
+.voice-cards__item {
   margin-inline: auto;
   @include mq("md") {
     margin-inline: initial;
+  }
+}
+.voice-cards--sub.voice-cards--sub {
+  gap: rem(40);
+  @include mq("md") {
+    gap: rem(82) rem(40);
   }
 }

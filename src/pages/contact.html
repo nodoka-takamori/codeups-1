@@ -190,9 +190,124 @@
       <nav class="breadcrumb inner">
         <ol class="breadcrumb__list">
           <li><a href="../index.html">TOP</a></li>
-          <li><a href="./campaign.html">キャンペーン</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
         </ol>
       </nav>
+      <div class="page-contact">
+        <div class="layout-contact">
+          <div class="page-contact__inner inner">
+            <form class="page-contact__form form" action="#" method="POST">
+              <!-- お名前 -->
+              <div class="form__group">
+                <label for="name"
+                  >お名前 <span class="required">必須</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="沖縄 太郎"
+                  required
+                />
+              </div>
+              <!-- メールアドレス -->
+              <div class="form__group">
+                <label for="email"
+                  >メールアドレス <span class="required">必須</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="aaa000@gmail.com"
+                  required
+                />
+              </div>
+              <!-- 電話番号 -->
+              <div class="form__group">
+                <label for="phone"
+                  >電話番号 <span class="required">必須</span></label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="000-0000-0000"
+                  required
+                />
+              </div>
+              <!-- お問合せ項目 -->
+              <div class="form__group form__group--check">
+                <label>お問合せ項目 <span class="required">必須</span></label>
+                <div class="checkbox-group">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="inquiry[]"
+                      value="ダイビング講習について"
+                    />
+                    ダイビング講習について</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="inquiry[]"
+                      value="ファンダイビングについて"
+                    />
+                    ファンダイビングについて</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="inquiry[]"
+                      value="体験ダイビングについて"
+                    />
+                    体験ダイビングについて</label
+                  >
+                </div>
+              </div>
+              <!-- キャンペーン -->
+              <div class="form__group form__group--cam">
+                <label  for="campaign" class="form__group-title">キャンペーン</label>
+                <select id="campaign" name="campaign" >
+                  <option value="">キャンペーン内容を選択</option>
+                  <option value="キャンペーン1">キャンペーン1</option>
+                  <option value="キャンペーン2">キャンペーン2</option>
+                </select>
+              </div>
+              <!-- お問合せ内容 -->
+              <div class="form__group">
+                <label for="message"
+                  >お問合せ内容 <span class="required">必須</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <!-- 個人情報同意 -->
+              <div class="form__group--pr ">
+                <label
+                  ><input type="checkbox" name="agree" required class="form__group-box--pr"/>
+                  個人情報の取り扱いについて同意のうえ送信します。</label
+                >
+              </div>
+              <!-- 送信ボタン -->
+              <div class="form__button">
+                <a href="./thanks.html" class="button button--send">Send<span class="arrow"></span></a>
+              </div>
+              <!-- <div class="form__button">
+                <button type="submit" class="submit-button">
+                  Send <span>→</span>
+                </button>
+              </div> -->
+            </form>
+          </div>
+        </div>
+      </div>
+
       <div class="button-top" id="button-top">
         <a href="#"
           ><img src="../assets/images/common/up__arrow.svg" alt="ロゴ"
@@ -269,7 +384,9 @@
                 <a href="./faq.html">よくある質問</a>
               </li>
               <li class="nav-menu__item nav-menu__item--main">
-                <a href="./privacypolicy.html">プライバシー<br class="is-sp" />ポリシー</a>
+                <a href="./privacypolicy.html"
+                  >プライバシー<br class="is-sp" />ポリシー</a
+                >
               </li>
               <li class="nav-menu__item nav-menu__item--main">
                 <a href="./terms.html">利用規約</a>

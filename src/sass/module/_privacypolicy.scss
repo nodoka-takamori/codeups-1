@@ -42,9 +42,11 @@
 .privacypolicy__text-container {
   margin-top: rem(39);
 }
+
 .privacypolicy__text-wrap {
   margin-top: rem(32);
 }
+
 .privacypolicy__text {
   font-size: rem(16);
   font-weight: $regular;
@@ -68,7 +70,6 @@
   content: counter(custom-counter) "." " ";
   padding-right: rem(1);
 }
-
 
 .privacypolicy__footer {
   margin-top: rem(104);

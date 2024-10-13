@@ -1,0 +1,128 @@
+@use "global" as *;
+.page-price {
+  margin-top: rem(50);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(150);
+  }
+}
+.page-price::before {
+  position: absolute;
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  left: rem(15);
+  top: rem(-24);
+  background: url(../../assets/images/common/decoration_3.png) center center /
+    contain no-repeat;
+  @include mq("md") {
+    left: calc(50% - min(48.5vw, rem(621)));
+    top: rem(-70);
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.page-price__layout {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(39);
+  }
+}
+.page-price__container {
+  // width: 100%;
+  // margin-inline: auto;
+}
+.page-price__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-inline: auto;
+  max-width: rem(600);
+  @include mq("md") {
+    display: flex;
+    flex-direction: initial;
+    max-width: rem(700);
+  }
+}
+.page-price__list:not(:first-child) {
+  margin-top: rem(34);
+  @include mq("md") {
+    margin-top: rem(72);
+  }
+}
+.page-price__table {
+  border: 1px solid $blue;
+  border-collapse: collapse;
+  max-width: rem(700);
+  width: 100%;
+  // margin-inline: auto;
+}
+
+td {
+  border: 1px solid $blue;
+  border-collapse: collapse;
+}
+
+.page-price__table-title {
+  padding: rem(9) rem(30) ;
+  width: 100%;
+  background-color: #408f95;
+  color: #fff;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: rem(8);
+  align-items: center;
+  justify-content: center;
+  @include mq("md") {
+    flex-direction: column;
+    padding: 0;
+    width: rem(283);
+  }
+}
+
+.page-price__table-title::before {
+  background-image: url(../../assets/images/common/giji_1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: rem(24);
+  width: rem(24);
+  @include mq("md") {
+    order: 1;
+    height: rem(64);
+    width: rem(64);
+  }
+}
+
+.page-price__table-subtitle {
+  text-align: center;
+  width: rem(300);
+  @include mq("md") {
+    text-align: initial;
+    padding: rem(18) rem(15);
+  }
+}
+.page-price__table-price {
+  width: rem(108);
+  text-align: end;
+  padding: rem(18) rem(15);
+  @include mq("md") {
+    width: rem(145);
+  }
+}
+
+.page-price__contact {
+  margin-top: rem(108);
+  @include mq("md") {
+    margin-top: rem(141);
+  }
+}
+.page-price__footer {
+  margin-top: rem(100);
+  @include mq("md") {
+    margin-top: rem(160);
+  }
+}

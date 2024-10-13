@@ -1,14 +1,28 @@
 @use "global" as *;
-
-.page-contact__contact {
-  margin-top: rem(80);
+.page-contact {
+  position: relative;
+}
+.page-contact::before {
+  position: absolute;
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  left: rem(15);
+  top: rem(-24);
+  background: url(../../assets/images/common/decoration_3.png) center center /
+    contain no-repeat;
+    z-index: -1;
   @include mq("md") {
-    margin-top: rem(100);
+    left: calc(50% - min(48.5vw, rem(621)));
+    top: rem(-57);
+    width: rem(301);
+    height: rem(138);
   }
 }
+
 .page-contact__footer {
-  margin-top: rem(100);
+  margin-top: rem(147);
   @include mq("md") {
-    margin-top: rem(160);
+    margin-top: rem(175);
   }
 }
