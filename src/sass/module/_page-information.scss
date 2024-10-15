@@ -43,17 +43,13 @@
 .page-information__tag:nth-child(2)::before {
   @include mq("md") {
     background-image: url(../../assets/images/common/giji_2_blue.png);
-    height: rem(64);
     left: rem(20);
-    width: rem(64);
   }
 }
 .page-information__tag:nth-child(3)::before {
   @include mq("md") {
     background-image: url(../../assets/images/common/giji_3_blue.png);
-    height: rem(64);
     left: rem(32);
-    width: rem(64);
   }
 }
 
@@ -62,7 +58,9 @@
   background: $blue;
   transition: 0.3s ease-in-out;
 }
-.page-information__tag::before:hover {
+
+
+.page-information__tag:hover::before {
   position: absolute;
   content: "";
   z-index: 5;
@@ -71,18 +69,21 @@
   height: rem(64);
   left: rem(20);
   width: rem(64);
+  background-size: contain;
 }
-.page-information__tag:nth-child(2)::before:hover {
+.page-information__tag:nth-child(2):hover::before{
   background: url(../../assets/images/common/giji_2.png);
   height: rem(64);
   left: rem(20);
   width: rem(64);
+  background-size: contain;
 }
-.page-information__tag:nth-child(3)::before:hover {
+.page-information__tag:nth-child(3):hover::before {
   background: url(../../assets/images/common/giji_3.png);
   height: rem(64);
   left: rem(32);
   width: rem(64);
+  background-size: contain;
 }
 .page-information__container {
   margin-top: rem(13);

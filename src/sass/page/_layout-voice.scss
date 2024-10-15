@@ -1,0 +1,22 @@
+@use 'global' as *;
+
+.layout-voice {
+  margin-top: rem(50);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(150);
+  }
+}
+
+.layout-voice__cards{
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(39);
+  }
+}
+.layout-voice__pagination {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(54);
+  }
+}

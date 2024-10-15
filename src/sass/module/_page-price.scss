@@ -1,10 +1,6 @@
 @use "global" as *;
 .page-price {
-  margin-top: rem(50);
   position: relative;
-  @include mq("md") {
-    margin-top: rem(150);
-  }
 }
 .page-price::before {
   position: absolute;
@@ -29,10 +25,7 @@
     margin-top: rem(39);
   }
 }
-.page-price__container {
-  // width: 100%;
-  // margin-inline: auto;
-}
+
 .page-price__list {
   display: flex;
   flex-direction: column;
@@ -56,16 +49,16 @@
   border-collapse: collapse;
   max-width: rem(700);
   width: 100%;
-  // margin-inline: auto;
+
 }
 
-td {
+.page-price__table td {
   border: 1px solid $blue;
   border-collapse: collapse;
 }
 
 .page-price__table-title {
-  padding: rem(9) rem(30) ;
+  padding: rem(9) rem(30);
   width: 100%;
   background-color: #408f95;
   color: #fff;

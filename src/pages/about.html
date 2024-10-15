@@ -204,10 +204,10 @@
                   class="about__photo2 about__photo2--sub"
                 />
                 <img
-                src="../assets/images/common/about_1.jpg"
-                alt="青い空と赤い屋根の上にシーサーが置いてある"
-                class="about__photo1 about__photo1--sub"
-              />
+                  src="../assets/images/common/about_1.jpg"
+                  alt="青い空と赤い屋根の上にシーサーが置いてある"
+                  class="about__photo1 about__photo1--sub"
+                />
               </div>
               <div class="about__text-contents about__text-contents--sub">
                 <div class="about__text-title about__text-title--sub">
@@ -237,8 +237,9 @@
           </div>
         </div>
       </section>
+      <!-- ギャラリー -->
       <section class="gallery layout-gallery">
-        <div class="inner">
+        <div class="gallery__inner inner">
           <div class="about__title section-header">
             <p class="section-header__title">Gallery</p>
             <h2 class="section-header__subtitle">フォト</h2>
@@ -326,6 +327,18 @@
             </div>
           </div>
         </div>
+        <!-- モーダル -->
+        <div id="js-modal" class="modal">
+          <div class="modal__content">
+            <span id="js-modal__close" class="modal__close">&times;</span>
+            <img
+              id="js-modal__img"
+              src="../assets/images/common/gallery1.jpg"
+              alt="拡大画像"
+              class="modal__image"
+            />
+          </div>
+        </div>
       </section>
       <section class="contact page-about__contact">
         <div class="inner">
@@ -358,7 +371,7 @@
                 <h2 class="contact__subtitle">お問い合わせ</h2>
                 <p class="contact__title-text">ご予約・お問い合わせはコチラ</p>
                 <div class="contact__button">
-                  <a href="#" class="button"
+                  <a href="./contact.html" class="button"
                     >Contact us<span class="arrow"></span
                   ></a>
                 </div>
@@ -418,7 +431,7 @@
             </ul>
             <ul class="nav-menu__items nav-menu__items--second">
               <li class="nav-menu__item nav-menu__item--main">
-                <a href="#">ダイビング情報</a>
+                <a href="./information.html">ダイビング情報</a>
               </li>
               <li class="nav-menu__item"><a href="#">ライセンス講習</a></li>
               <li class="nav-menu__item"><a href="#">体験ダイビング</a></li>

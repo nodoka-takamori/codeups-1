@@ -25,15 +25,11 @@
   flex-direction: column;
   position: relative;
   gap: rem(80);
-  // padding-left: rem(21);
-  // padding-right: rem(19);
   @include mq("md") {
     width: 100%;
     display: flex;
     flex-direction: initial;
     gap: rem(80);
-    // padding-left: $padding-pc;
-    // padding-right: $padding-pc;
   }
 }
 .page-blog__main {
@@ -44,16 +40,14 @@
 .page-blog__cards-container {
   display: flex;
   flex-direction: column;
-  gap: rem(41) rem(40);
+  gap: rem(32) rem(40);
   @include mq("md") {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: rem(80) rem(40);
   }
 }
-.page-blog__pagination {
-  margin-top: rem(86);
-}
+
 .page-blog__aside {
   max-width: rem(294);
   width: 100%;
@@ -73,8 +67,6 @@
   }
 }
 // サブページ
-.page-blog__container {
-}
 
 .page-blog__contents {
   width: 100%;

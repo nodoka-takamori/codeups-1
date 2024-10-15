@@ -1,13 +1,6 @@
 @use "global" as *;
 
-.aside {
-}
 
-.aside__contents {
-}
-// .aside__contents:not(:first-child) {
-//   margin-top: rem(80);
-// }
 .aside__article {
   margin-top: rem(1);
   @include mq("md") {

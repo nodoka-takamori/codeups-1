@@ -41,13 +41,6 @@
 }
 
 
-.is-sp {
-  display: block;
-  @include mq("md") {
-    display: none;
-  }
-}
-
 .footer__copyright {
   margin-top: rem(39);
   font-family: $english-font-family;

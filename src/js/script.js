@@ -1,6 +1,7 @@
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
 
+  // ハンバーガーメニュー
   $(".header__hamburger").on("click", function () {
     $(this).toggleClass("is-active"); // ハンバーガーメニューのアイコンを変化させる
     $(".js-sp-nav").toggleClass("is-active"); // メニューの表示/非表示を切り替える
@@ -24,6 +25,7 @@ jQuery(function ($) {
     header.classList.toggle("is-active");
   });
 
+  // トップページfvのSwiper
   var swiper = new Swiper(".js-fv-Swiper", {
     autoplay: {
       delay: 2000, // 2秒ごとにスライド
@@ -37,6 +39,7 @@ jQuery(function ($) {
     speed: 3000, // 切り替えの速度を1秒に設定
   });
 
+  //トップページcampaignセクションのSwiper
   var swiper = new Swiper(".js-campaign-Swiper", {
     loop: true, // スライドをループ
     speed: 2000, // 切り替え速度
@@ -52,6 +55,7 @@ jQuery(function ($) {
     },
   });
 
+  //写真の前に青の要素が出てくる実装
   $(document).ready(function () {
     // 要素の取得とスピードの設定
     let box = $(".js-colorbox"),
@@ -80,6 +84,7 @@ jQuery(function ($) {
     });
   });
 
+  //button-top
   var pagetop = $("#button-top");
   pagetop.hide();
   $(window).scroll(function () {
@@ -90,8 +95,8 @@ jQuery(function ($) {
     }
   });
 
-  // クリックして開閉するトグル要素を取得
-  const toggleItems = document.querySelectorAll(".js-archive__toggle");
+  //blogページのアーカイブの実装
+  const toggleItems = document.querySelectorAll(".js-archive__toggle"); // クリックして開閉するトグル要素を取得
 
   // 各トグルアイテムにクリックイベントを追加
   toggleItems.forEach((item) => {
@@ -120,8 +125,8 @@ jQuery(function ($) {
     });
   });
 
-  // 全てのpage-faq__questionを取得
-  const faqQuestions = document.querySelectorAll(".js-faq__open");
+  //FAQページ、ドロワー
+  const faqQuestions = document.querySelectorAll(".js-faq__open"); // 全てのpage-faq__questionを取得
 
   // 各質問にクリックイベントを追加
   faqQuestions.forEach(function (question) {
@@ -138,5 +143,32 @@ jQuery(function ($) {
         this.classList.add("open"); // 質問にopenクラスを追加して「＋」に変更
       }
     });
+  });
+
+  //モーダル
+  const modal = document.getElementById("js-modal");
+  const modalImg = document.getElementById("js-modal__img");
+  const modalOpenElements = document.querySelectorAll(".gallery__photo");
+  const modalClose = document.getElementById("js-modal__close");
+
+  // 各画像クリックでモーダルを表示
+  modalOpenElements.forEach((item) => {
+    item.addEventListener("click", function () {
+      const imgSrc = item.querySelector("img").src; // クリックされた画像のソースを取得
+      modalImg.src = imgSrc; // モーダルの画像に設定
+      modal.style.display = "flex"; // モーダルを表示
+    });
+  });
+
+  // モーダルの閉じるボタンで非表示に
+  modalClose.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // モーダル外をクリックした場合も閉じる
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
   });
 });

@@ -27,13 +27,6 @@
   }
 }
 
-// .about__photo-wrap--sub img {
-//   width: rem(345);
-//   object-fit: cover;
-//   // @include mq("md") {
-//   //   width: 100%;
-//   // }
-// }
 .about__photo1 {
   display: block;
   width: 37.1%;
@@ -82,12 +75,7 @@
   }
 }
 
-.is-pc {
-  display: none;
-  @include mq("md") {
-    display: block;
-  }
-}
+
 
 .about__text-title {
   font-family: $english-font-family;
@@ -125,11 +113,8 @@
     margin-top: rem(42);
   }
 }
-///////////
+// aboutページの調整
 
-// .about__photo-container--sub.about__photo-container--sub {
-//   margin-top: 0;
-// }
 .about__photo-container--sub.about__photo-container--sub{
   margin-top: 0;
   @include mq("md") {
@@ -139,13 +124,7 @@
 .about__photo-container--sub::before {
   display: none;
 }
-// .about__photo-wrap {
-//   max-width: rem(600);
-//   margin-inline: auto;
-//   @include mq("md") {
-//     max-width: rem(1080);
-//   }
-// }
+
 .about__photo2--sub {
   aspect-ratio: 345/228;
   width: 100%;
@@ -179,6 +158,7 @@
     line-height: calc(100 / 80);
     color: $white;
     margin-top: rem(-9);
+    transform: translate(0, 0);
   }
   }
 
@@ -198,24 +178,8 @@ width: 77.77%;
   margin-top: 0;
   }
 }
-// .about__text-contents--sub {
-//   margin-top: rem(61);
-// }
-// .about__text-title--sub.about__text-title--sub {
-//
-//   @include mq("md") {
-//     width: auto;
-//     top: rem(66);
-//     left: rem(331);
-//     font-size: rem(80);
-//     line-height: calc(100 / 80);
-//     color: $white;
-//     margin-top: rem(-9);
-//   }
-// }
+
 .about__text--sub.about__text--sub {
   margin-top: rem(-22);
-  @include mq("md") {
-    margin-top: 0;
-  }
+
 }
