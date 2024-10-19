@@ -1,8 +1,12 @@
 @use "global" as *;
 
 .mv {
+  height: rem(460);
   position: relative;
   z-index: 1;
+  @include mq("md") {
+    height: rem(548);
+  }
 }
 
 .mv__title-wrap {
@@ -33,18 +37,12 @@
 
 .mv__photo {
   display: block;
-  height: auto;
+  height: inherit;
   object-fit: cover;
-  width: 100%;
-  aspect-ratio: 375/460;
-  @include mq("md") {
-    aspect-ratio: 1440/548;
-  }
 }
 
 .mv__photo img {
   width: 100%;
-  height: auto;
+  height: inherit;
   object-fit: cover;
-  object-position: center top;
 }

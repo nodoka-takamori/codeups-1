@@ -187,17 +187,19 @@
           />
         </picture>
       </section>
-      <nav class="breadcrumb inner">
-        <ol class="breadcrumb__list">
-          <li><a href="../index.html">TOP</a></li>
-          <li><a href="./vlog.html">お客様の声</a></li>
-        </ol>
-      </nav>
+      <div class="breadcrumb layout-breadcrumb">
+        <div class="breadcrumb__inner inner">
+          <ol class="breadcrumb__list">
+            <li><a href="../index.html">TOP</a></li>
+            <li><a href="./vlog.html">お客様の声</a></li>
+          </ol>
+        </div>
+      </div>
       <section class="page-voice layout-voice">
         <div class="page-voice__inner inner">
           <!-- タグ -->
-          <ul class="page-voice__tags tags" >
-            <li class=" tags__item">
+          <ul class="page-voice__tags tags">
+            <li class="tags__item active">
               <a href="#">ALL</a>
             </li>
             <li class="tags__item">
@@ -211,7 +213,9 @@
             </li>
           </ul>
           <div class="layout-voice__cards">
-            <div class="page-voice__card-container voice-cards voice-cards--sub">
+            <div
+              class="page-voice__card-container voice-cards voice-cards--sub"
+            >
               <div class="voice-cards__item">
                 <a href="#" class="voice-card">
                   <div class="voice-card__head">
@@ -319,7 +323,7 @@
                         <div
                           class="voice-card__category voice-card__category--fun"
                         >
-                        体験ダイビング
+                          体験ダイビング
                         </div>
                       </div>
                       <h3 class="voice-card__title">
@@ -418,9 +422,7 @@
         <!-- ページネーション -->
         <div class="layout-voice__pagination pagination">
           <div class="pagination__wrap">
-            <a
-              href="#"
-              class="pagination__button pagination__button--prev"
+            <a href="#" class="pagination__button pagination__button--prev"
               >&lt;</a
             >
             <a href="#" class="pagination__button">1</a>
@@ -429,9 +431,7 @@
             <a href="#" class="pagination__button">4</a>
             <a href="#" class="pagination__button pagination__button--pc">5</a>
             <a href="#" class="pagination__button pagination__button--pc">6</a>
-            <a
-              href="#"
-              class="pagination__button pagination__button--next"
+            <a href="#" class="pagination__button pagination__button--next"
               >&gt;</a
             >
           </div>

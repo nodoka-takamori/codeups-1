@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 /* モーダルの背景 */
 .modal {
@@ -28,16 +28,22 @@
 /* モーダル内の画像 */
 .modal__image {
   max-height: 100%;
-    object-fit: contain;
-    width: auto;
+  object-fit: contain;
+  width: auto;
 }
 
-/* モーダルの閉じるボタン */
-.modal__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: rem(20);
-  color: $white;
-  cursor: pointer;
-}
+// .modal__back.is-active {
+//   opacity: 1;
+//   visibility: visible;
+//   transition: 0.2s ease-in-out;
+// }
+
+// /* モーダルの非表示状態 */
+// .modal__back {
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: 0.2s ease-in-out;
+// }
+// body.is-locked {
+//   overflow: hidden;
+// }

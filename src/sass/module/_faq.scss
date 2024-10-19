@@ -1,0 +1,91 @@
+@use 'global' as *;
+
+
+.faq__block:not(:first-child) {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(41);
+  }
+}
+
+.faq__question {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.faq__question p {
+    background-color: $blue;
+    color: $white;
+    font-family: $base-font-family;
+    font-size: rem(16);
+    font-weight: $regular;
+    width: 100%;
+    padding: rem(15);
+    @include mq("md") {
+      font-size: rem(20);
+      padding: rem(24) rem(40);
+    }
+  }
+/* プラスとマイナスのアイコンを作成 */
+.faq__question span {
+  position: absolute;
+  left: rem(300);
+  width: rem(28);
+  height: rem(1);
+  top: 50%;
+  background-color: $white;
+  border-radius: 4px;
+  z-index: 5;
+  transition: transform 0.3s ease; /* 回転のトランジション */
+  transform: rotate(90deg); /* ＋ の縦棒 */
+  @include mq("md") {
+    left: rem(632);
+  }
+}
+
+.faq__question span:nth-of-type(2) {
+  position: absolute;
+  width: rem(28);
+  height: rem(1);
+  top: 50%;
+  background-color: $white;
+  border-radius: 4px;
+  z-index: 5;
+  transition: opacity 0.3s ease; /* 透明度のトランジション */
+  opacity: 1; /* ＋ の横棒 */
+  transform: rotate(180deg)
+}
+
+/* マイナスに切り替わるときのスタイル */
+.faq__question.open span {
+  transform: rotate(180deg); /* − の横棒を表示 */
+}
+
+.faq__question.open span:nth-of-type(2) {
+  opacity: 0; /* 縦棒を非表示にして「＋」から「−」にする */
+}
+
+/* FAQ回答の初期状態（開いている状態） */
+.faq__answer {
+  max-height: 1000px; /* 開いている時の高さ */
+  overflow: hidden;
+  background-color: $white;
+  color: $black;
+  border: 1px solid $blue;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $regular;
+  width: 100%;
+  padding: rem(20) rem(13);
+  opacity: 1;
+  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+}
+
+/* FAQ回答が閉じられた状態 */
+.faq__answer:not(.open) {
+  max-height: 0; /* 閉じている時の高さ */
+  padding: 0 rem(13); /* 閉じている時はパディングを0 */
+  opacity: 0; /* 完全に透明 */
+}
+

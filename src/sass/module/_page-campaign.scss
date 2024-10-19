@@ -1,9 +1,7 @@
 @use "global" as *;
 
 .page-campaign {
-
   position: relative;
-
 }
 .page-campaign::before {
   position: absolute;
@@ -27,11 +25,14 @@
   display: flex;
   flex-direction: column;
   gap: rem(38);
+  margin-top: rem(40);
+
   @include mq("md") {
     width: 100%;
     display: grid;
     gap: rem(79) rem(40);
     grid-template-columns: repeat(2, 1fr);
+    margin-top: rem(39);
   }
 }
 .page-campaign__card {
@@ -49,44 +50,4 @@
   @include mq("md") {
     margin-top: rem(160);
   }
-}
-
-
-.pagination__wrap {
-  display: flex;
-  gap: rem(12);
-  justify-content: center;
-}
-
-.pagination__button {
-  color: $blue;
-  float: left;
-  width: rem(38);
-  height: rem(38);
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  border: 1px solid $blue;
-}
-.pagination__button--prev {
-  margin-right: rem(20);
-  margin-left: 0;
-}
-.pagination__button--next {
-  margin-left: rem(20);
-  margin-right: 0;
-}
-.pagination a.active {
-  background-color: $blue;
-  color: $white;
-  border: 1px solid $blue;
-  font-family: "Lato", sans-serif;
-  font-size: rem(16);
-  font-weight: $bold;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: $blue;
-  color: $white;
 }

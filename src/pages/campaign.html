@@ -187,17 +187,19 @@
           />
         </picture>
       </section>
-      <nav class="breadcrumb inner">
-        <ol class="breadcrumb__list">
-          <li><a href="../index.html">TOP</a></li>
-          <li><a href="./campaign.html">キャンペーン</a></li>
-        </ol>
-      </nav>
+      <div class="breadcrumb layout-breadcrumb">
+        <div class="breadcrumb__inner inner">
+          <ol class="breadcrumb__list">
+            <li><a href="../index.html">TOP</a></li>
+            <li><a href="./campaign.html">キャンペーン</a></li>
+          </ol>
+        </div>
+      </div>
       <section class="page-campaign layout-campaign">
         <div class="page-campaign__inner inner">
           <!-- タグ -->
           <ul class="page-campaign__tags tags">
-            <li class="tags__item">
+            <li class="tags__item active">
               <a href="#">ALL</a>
             </li>
             <li class="tags__item">
@@ -210,7 +212,7 @@
               <a href="#">体験ダイビング</a>
             </li>
           </ul>
-          <div class="page-campaign__cards layout-campaign__cards">
+          <div class="page-campaign__cards">
             <div class="page-campaign__card campaign-card campaign-card--big">
               <figure class="campaign-card__img">
                 <img
@@ -420,21 +422,25 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="layout-campaign__pagination pagination">
-          <div class="pagination__wrap">
-            <a href="#" class="pagination__button pagination__button--prev"
-              >&lt;</a
-            >
-            <a href="#" class="pagination__button">1</a>
-            <a href="#" class="pagination__button active">2</a>
-            <a href="#" class="pagination__button">3</a>
-            <a href="#" class="pagination__button">4</a>
-            <a href="#" class="pagination__button pagination__button--pc">5</a>
-            <a href="#" class="pagination__button pagination__button--pc">6</a>
-            <a href="#" class="pagination__button pagination__button--next"
-              >&gt;</a
-            >
+          <div class="pagination">
+            <div class="pagination__wrap">
+              <a href="#" class="pagination__button pagination__button--prev"
+                >&lt;</a
+              >
+              <a href="#" class="pagination__button">1</a>
+              <a href="#" class="pagination__button active">2</a>
+              <a href="#" class="pagination__button">3</a>
+              <a href="#" class="pagination__button">4</a>
+              <a href="#" class="pagination__button pagination__button--pc"
+                >5</a
+              >
+              <a href="#" class="pagination__button pagination__button--pc"
+                >6</a
+              >
+              <a href="#" class="pagination__button pagination__button--next"
+                >&gt;</a
+              >
+            </div>
           </div>
         </div>
       </section>

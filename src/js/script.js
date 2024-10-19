@@ -126,49 +126,88 @@ jQuery(function ($) {
   });
 
   //FAQページ、ドロワー
-  const faqQuestions = document.querySelectorAll(".js-faq__open"); // 全てのpage-faq__questionを取得
+  const faqQuestions = document.querySelectorAll(".js-faq-close"); // 全てのFAQ質問要素を取得
 
-  // 各質問にクリックイベントを追加
   faqQuestions.forEach(function (question) {
-    question.addEventListener("click", function () {
-      // クリックされた質問の次の要素（page-faq__answer）を取得
-      const answer = this.nextElementSibling;
+    const answer = question.nextElementSibling; // 質問の次の要素（答え）
 
-      // 答えの開閉状態をトグル
+    // 最初に全ての質問を開いた状態にする
+    question.classList.add("open");
+    answer.classList.add("open");
+
+    // 各質問にクリックイベントを追加
+    question.addEventListener("click", function () {
       if (answer.classList.contains("open")) {
+        // 答えを閉じる処理
         answer.classList.remove("open");
-        this.classList.remove("open"); // 質問のopenクラスを削除
+        question.classList.remove("open");
       } else {
+        // 答えを開く処理
         answer.classList.add("open");
-        this.classList.add("open"); // 質問にopenクラスを追加して「＋」に変更
+        question.classList.add("open");
       }
     });
   });
 
-  //モーダル
+  // モーダル関連の要素を取得
   const modal = document.getElementById("js-modal");
   const modalImg = document.getElementById("js-modal__img");
   const modalOpenElements = document.querySelectorAll(".gallery__photo");
   const modalClose = document.getElementById("js-modal__close");
 
+  // スクロールを制御する関数
+  function toggleBodyLock(isLocked) {
+    if (isLocked) {
+      document.body.style.overflow = "hidden"; // スクロールを無効にする
+    } else {
+      document.body.style.overflow = ""; // スクロールを再度有効にする
+    }
+  }
+
   // 各画像クリックでモーダルを表示
   modalOpenElements.forEach((item) => {
     item.addEventListener("click", function () {
       const imgSrc = item.querySelector("img").src; // クリックされた画像のソースを取得
-      modalImg.src = imgSrc; // モーダルの画像に設定
+      modalImg.src = imgSrc; // モーダル内の画像に設定
       modal.style.display = "flex"; // モーダルを表示
+      toggleBodyLock(true); // スクロールを無効化
     });
   });
 
-  // モーダルの閉じるボタンで非表示に
-  modalClose.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
-
-  // モーダル外をクリックした場合も閉じる
+  // モーダル外をクリックした場合にモーダルを閉じる
   modal.addEventListener("click", function (event) {
     if (event.target === modal) {
-      modal.style.display = "none";
+      modal.style.display = "none"; // モーダルを閉じる
+      toggleBodyLock(false); // スクロールを再度有効化
     }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // すべてのタブ要素とコンテンツ要素を取得
+  const tabs = document.querySelectorAll(".tab__name");
+  const contents = document.querySelectorAll(".tab__content");
+
+  // 各タブにクリックイベントを追加
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function (event) {
+      event.preventDefault(); // デフォルトのリンク動作を無効化
+
+      // すでにアクティブなタブとコンテンツからクラスを削除
+      document
+        .querySelector(".tab__name.is-change")
+        .classList.remove("is-change");
+      document
+        .querySelector(".tab__content.is-show")
+        .classList.remove("is-show");
+
+      // クリックされたタブにis-changeクラスを追加
+      this.classList.add("is-change");
+
+      // クリックされたタブに対応するコンテンツにis-showクラスを追加
+      contents[index].classList.add("is-show");
+    });
   });
 });

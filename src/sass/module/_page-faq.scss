@@ -18,99 +18,14 @@
     height: rem(138);
   }
 }
-
-
-.page-faq__container {
+.page-faq__inner.page-faq__inner {
   width: 100%;
-  margin-inline: auto;
-  max-width: rem(600);
+  max-width: rem(630);
   @include mq("md") {
-    max-width: rem(700);
+    max-width: rem(750);
+    margin-inline: auto;
   }
 }
-.page-faq__block:not(:first-child) {
-  margin-top: rem(40);
-  @include mq("md") {
-    margin-top: rem(41);
-  }
-}
-.page-faq__question {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-.page-faq__question p {
-  background-color: $blue;
-  color: $white;
-  font-family: $base-font-family;
-  font-size: rem(16);
-  font-weight: $regular;
-  width: 100%;
-  padding: rem(15);
-  @include mq("md") {
-    font-size: rem(20);
-    padding: rem(24) rem(40);
-  }
-}
-
-.page-faq__question span {
-  position: absolute;
-  left: rem(300);
-  width: rem(28);
-  height: rem(1);
-  top: 50%;
-  background-color: $white;
-  border-radius: 4px;
-  z-index: 5;
-  transform: rotate(90deg);
-  transition: transform 0.3s ease; /* 回転のトランジションを追加 */
-  @include mq("md") {
-    left: rem(625);
-    width: rem(37);
-  }
-}
-.page-faq__question span:nth-of-type(2) {
-  transform: rotate(0);
-}
-
-/* 回転させて「＋」を表示 */
-.page-faq__question.open span {
-  transform: rotate(180deg);
-}
-.page-faq__question.open span:nth-of-type(2) {
-  opacity: 0;
-}
-.page-faq__answer {
-  max-height: 0;
-  overflow: hidden;
-  background-color: $white;
-  color: $black;
-  border: 1px solid $blue;
-  font-family: $base-font-family;
-  font-size: rem(16);
-  font-weight: $regular;
-  width: 100%;
-  padding: 0 rem(13);
-  opacity: 0;
-  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease; /* スムーズなトランジション */
-
-  @include mq("md") {
-    margin-top: rem(20);
-    font-size: rem(16);
-    padding: 0 rem(40); /* 最初はパディングも0 */
-  }
-}
-
-/* 答えが開かれる状態 */
-.page-faq__answer.open {
-  max-height: 1000px; /* 十分な高さを指定して開くようにする */
-  padding: rem(20) rem(13); /* 開いたときに適切なパディングを再適用 */
-  opacity: 1; /* 開いたときは透明度を100%に */
-  @include mq("md") {
-    padding: rem(35) rem(40); /* 開いたときのパディング */
-  }
-}
-
 
 .page-faq__contact {
   margin-top: rem(108);

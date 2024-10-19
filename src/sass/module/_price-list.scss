@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  @include mq("md") {
+    display: flex;
+    flex-direction: initial;
+  }
+}
+.price-list:not(:first-child) {
+  margin-top: rem(34);
+  @include mq("md") {
+    margin-top: rem(72);
+  }
+}
+
+.price__table {
+  border: 1px solid $blue;
+  border-collapse: collapse;
+  max-width: rem(700);
+  width: 100%;
+}
+
+
+.price__table td {
+  border: 1px solid $blue;
+  border-collapse: collapse;
+}
+
+.price-list__title {
+  padding: rem(9) rem(30);
+  width: 100%;
+  background-color: #408f95;
+  color: #fff;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: rem(8);
+  align-items: center;
+  justify-content: center;
+  @include mq("md") {
+    flex-direction: column;
+    padding: 0;
+    width: rem(283);
+  }
+}
+
+.price-list__title::before {
+  background-image: url(../../assets/images/common/giji_1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: rem(24);
+  width: rem(24);
+  @include mq("md") {
+    order: 1;
+    height: rem(64);
+    width: rem(64);
+  }
+}
+
+.price-list__sub-title {
+  text-align: center;
+  width: rem(300);
+  @include mq("md") {
+    text-align: initial;
+    padding: rem(18) rem(15);
+  }
+}
+
+.price__price{
+  width: rem(108);
+  text-align: end;
+  padding: rem(18) rem(15);
+  @include mq("md") {
+    width: rem(145);
+  }
+}

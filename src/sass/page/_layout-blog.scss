@@ -5,9 +5,4 @@
     margin-top: rem(150);
   }
 }
-.layout-blog__pagination {
-  margin-top: rem(44);
-  @include mq("md") {
-    margin-top: rem(86);
-  }
-}
+
