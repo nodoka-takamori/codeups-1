@@ -8,12 +8,6 @@
     flex-direction: initial;
   }
 }
-.price-list:not(:first-child) {
-  margin-top: rem(34);
-  @include mq("md") {
-    margin-top: rem(72);
-  }
-}
 
 .price__table {
   border: 1px solid $blue;

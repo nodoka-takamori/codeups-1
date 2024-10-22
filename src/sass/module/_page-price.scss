@@ -29,6 +29,15 @@
   }
 }
 
+.page-price__container{
+  display: flex;
+  flex-direction: column;
+gap: rem(34);
+  @include mq("md") {
+    gap: rem(72);
+  }
+}
+
 .page-price__contact {
   margin-top: rem(108);
   @include mq("md") {
