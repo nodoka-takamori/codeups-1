@@ -58,6 +58,7 @@
 .price-list__sub-title {
   text-align: center;
   width: rem(300);
+  font-weight: $regular;
   @include mq("md") {
     text-align: initial;
     padding: rem(18) rem(15);
@@ -68,6 +69,7 @@
   width: rem(108);
   text-align: end;
   padding: rem(18) rem(15);
+  font-weight: $regular;
   @include mq("md") {
     width: rem(145);
   }

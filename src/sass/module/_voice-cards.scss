@@ -20,7 +20,7 @@
     margin-inline: initial;
   }
 }
-.voice-cards--sub.voice-cards--sub {
+.voice-cards--sub {
   gap: rem(40);
   @include mq("md") {
     gap: rem(82) rem(40);

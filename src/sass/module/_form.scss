@@ -27,6 +27,12 @@
     margin-top: rem(39);
   }
 }
+.form__group--cam {
+  padding-bottom: rem(22);
+  @include mq("md") {
+    padding-bottom: rem(44);
+  }
+}
 //タイトル
 label {
   display: block;
@@ -78,8 +84,10 @@ textarea {
   }
 }
 select {
+  font-size: rem(12);
+  font-weight: $regular;
   color: $black;
-  padding: rem(7) rem(10);
+  padding: rem(12) rem(10);
   @include mq("md") {
     padding: rem(1) rem(8);
   }
@@ -149,7 +157,7 @@ input[type="checkbox"]:checked:before {
   position: absolute;
   height: rem(20);
   left: rem(326);
-  top: rem(54);
+  top: rem(51);
   border-style: solid;
   border-right: rem(5) solid transparent;
   border-left: rem(5) solid transparent;
@@ -159,11 +167,11 @@ input[type="checkbox"]:checked:before {
   border-bottom: 0;
   @include mq("md") {
     left: rem(677);
-    top: rem(9);
+    top: rem(8);
     border-style: solid;
-    border-right: rem(7) solid transparent;
-    border-left: rem(7) solid transparent;
-    border-top: rem(13) solid $blue;
+    border-right: rem(5) solid transparent;
+    border-left: rem(5) solid transparent;
+    border-top: rem(9) solid $blue;
     border-bottom: 0;
     width: rem(3);
   }

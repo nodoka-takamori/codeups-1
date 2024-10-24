@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .sitemap {
-  margin-top: rem(77);
+  margin-top: rem(48);
   position: relative;
   @include mq("md") {
-    margin-top: rem(173);
+    margin-top: rem(147);
   }
 }
 .sitemap::before {

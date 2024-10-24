@@ -14,9 +14,3 @@
     margin-top: rem(39);
   }
 }
-.layout-voice__pagination {
-  margin-top: rem(80);
-  @include mq("md") {
-    margin-top: rem(54);
-  }
-}

@@ -12,7 +12,7 @@
   top: rem(-25);
   background: url(../../assets/images/common/decoration_3.png) center center /
     contain no-repeat;
-    z-index: -1;
+  z-index: -1;
   @include mq("md") {
     left: calc(50% - min(48.5vw, rem(621)));
     top: rem(-69);
@@ -38,7 +38,19 @@
   width: 100%;
 }
 
+.page-blog__pagination {
+  margin-top: rem(44);
+  @include mq("md") {
+    margin-top: rem(86);
+  }
+}
 
+.page-blog__pagination--sub {
+  margin-top: rem(44);
+  @include mq("md") {
+    margin-top: rem(78);
+  }
+}
 
 .page-blog__aside {
   max-width: rem(294);
@@ -69,7 +81,7 @@
   }
 }
 
-.page-blog__contents time{
+.page-blog__contents time {
   font-size: rem(14);
   font-weight: $regular;
   color: $black;
@@ -96,8 +108,13 @@
     margin-top: rem(40);
   }
 }
-
-.page-blog__contents p {
+.page-blog__content {
+  margin-top: rem(22);
+  @include mq("md") {
+    margin-top: rem(38);
+  }
+}
+.page-blog__content p {
   margin-top: rem(22);
   font-family: $base-font-family;
   font-size: rem(16);
@@ -107,15 +124,21 @@
     margin-top: rem(38);
   }
 }
+.page-blog__content img {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
 
-.page-blog__contents ul {
+.page-blog__content ul {
   margin-top: rem(29);
   @include mq("md") {
     margin-top: rem(42);
   }
 }
 
-.page-blog__contents li{
+.page-blog__content li {
   font-family: $base-font-family;
   font-size: rem(16);
   font-weight: $regular;
@@ -126,10 +149,10 @@
     padding-left: rem(31);
   }
 }
-.page-blog__contents li:not(:first-child) {
+.page-blog__content li:not(:first-child) {
   margin-top: rem(3);
 }
-.page-blog__contents li::before {
+.page-blog__content li::before {
   position: absolute;
   content: "";
   width: rem(18);

@@ -1,5 +1,23 @@
 @use "global" as *;
-
+.page-information {
+  position: relative;
+}
+.page-information::before {
+  position: absolute;
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  left: rem(15);
+  top: rem(-93);
+  background: url(../../assets/images/common/decoration_3.png) center center /
+    contain no-repeat;
+  @include mq("md") {
+    left: calc(50% - min(48.5vw, rem(621)));
+    top: rem(-70);
+    width: rem(301);
+    height: rem(138);
+  }
+}
 .page-information__contact {
   margin-top: rem(108);
   @include mq("md") {

@@ -1,39 +1,49 @@
 @use "global" as *;
-.gallery__photo-wrapper {
-  margin-top: rem(42);
-  display: flex;
-  flex-direction: column;
-  gap: rem(8);
-  @include mq("md") {
-    margin-top: rem(82);
-  }
-}
 
 .gallery__photo-container {
   display: flex;
   flex-direction: column;
   gap: rem(8);
+  margin-top: rem(40);
   @include mq("md") {
     display: grid;
     grid-auto-flow: dense;
-    grid-template-columns: repeat(9, 1fr);
-    margin-top: 5rem;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(11, 1fr);
+    margin-top: rem(80);
   }
 }
 .gallery__photo {
-  grid-column: span 5;
-  grid-row: span 1;
+  cursor: pointer;
 }
-.gallery__photo--big {
-  grid-column: span 4;
+
+.gallery__photo:nth-child(6n + 1),
+.gallery__photo:nth-child(6n + 6) {
+  grid-column: span 5;
   grid-row: span 2;
 }
 
-.gallery__photo--big img {
-  width: 100%;
+.gallery__photo:nth-child(6n + 1) img,
+.gallery__photo:nth-child(6n + 6) img {
+  aspect-ratio: 492 / 746;
+  object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
-.gallery__photo {
-  cursor: pointer;
+.gallery__photo:nth-child(6n + 2),
+.gallery__photo:nth-child(6n + 3),
+.gallery__photo:nth-child(6n + 4),
+.gallery__photo:nth-child(6n + 5) {
+  grid-column: span 6;
+  grid-row: span 1;
+}
+.gallery__photo:nth-child(6n + 2) img,
+.gallery__photo:nth-child(6n + 3) img,
+.gallery__photo:nth-child(6n + 4) img,
+.gallery__photo:nth-child(6n + 5) img {
+  aspect-ratio: 580 / 369;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }

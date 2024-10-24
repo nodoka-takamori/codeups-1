@@ -3,8 +3,8 @@ jQuery(function ($) {
 
   // ハンバーガーメニュー
   $(".header__hamburger").on("click", function () {
-    $(this).toggleClass("is-active"); // ハンバーガーメニューのアイコンを変化させる
-    $(".js-sp-nav").toggleClass("is-active"); // メニューの表示/非表示を切り替える
+    $(this).toggleClass("is-active");
+    $(".js-sp-nav").toggleClass("is-active");
 
     // bodyタグに「is-locked」クラスを追加/削除してスクロールを無効化
     if ($(".js-sp-nav").hasClass("is-active")) {
@@ -21,32 +21,31 @@ jQuery(function ($) {
 
   // ハンバーガーメニューがクリックされたときの処理
   hamburger.addEventListener("click", function () {
-    // headerにis-activeクラスをトグル（追加/削除）する
     header.classList.toggle("is-active");
   });
 
   // トップページfvのSwiper
   var swiper = new Swiper(".js-fv-Swiper", {
     autoplay: {
-      delay: 2000, // 2秒ごとにスライド
-      disableOnInteraction: false, // ユーザー操作後も自動再生を継続
+      delay: 2000,
+      disableOnInteraction: false,
     },
-    loop: true, // スライドをループさせる
-    effect: "fade", // フェードエフェクトを追加
+    loop: true,
+    effect: "fade",
     fadeEffect: {
-      crossFade: true, // ふんわりと切り替わる効果
+      crossFade: true,
     },
-    speed: 3000, // 切り替えの速度を1秒に設定
+    speed: 3000,
   });
 
   //トップページcampaignセクションのSwiper
   var swiper = new Swiper(".js-campaign-Swiper", {
-    loop: true, // スライドをループ
-    speed: 2000, // 切り替え速度
-    slidesPerView: "auto", // スライドを自動調整
+    loop: true,
+    speed: 2000,
+    slidesPerView: "auto",
     autoplay: {
-      delay: 4000, // 4秒ごとに自動再生
-      disableOnInteraction: false, // ユーザー操作後も自動再生
+      delay: 4000,
+      disableOnInteraction: false,
       waitForTransition: false,
     },
     navigation: {
@@ -95,24 +94,19 @@ jQuery(function ($) {
     }
   });
 
-  //blogページのアーカイブの実装
+  //blogページのアーカイブトグル
   const toggleItems = document.querySelectorAll(".js-archive__toggle"); // クリックして開閉するトグル要素を取得
 
-  // 各トグルアイテムにクリックイベントを追加
   toggleItems.forEach((item) => {
     item.addEventListener("click", function (event) {
-      event.preventDefault(); // デフォルトのリンク動作を無効化
-
+      event.preventDefault();
       // クリックされたアイテムにクラス 'open' を切り替える（矢印の向き）
       item.classList.toggle("open");
-
       // 月別項目を取得
       const months = item.nextElementSibling; // クリックされた次の兄弟要素
-
       // 月別アイテムが存在し、'aside__archive-item--month' の場合に処理
       if (months && months.classList.contains("aside__archive-item--month")) {
         let currentItem = months;
-
         // 次の月別アイテムが続く限り、'show' クラスのトグル処理
         while (
           currentItem &&
@@ -125,37 +119,19 @@ jQuery(function ($) {
     });
   });
 
-  //FAQページ、ドロワー
-  const faqQuestions = document.querySelectorAll(".js-faq-close"); // 全てのFAQ質問要素を取得
-
-  faqQuestions.forEach(function (question) {
-    const answer = question.nextElementSibling; // 質問の次の要素（答え）
-
-    // 最初に全ての質問を開いた状態にする
-    question.classList.add("open");
-    answer.classList.add("open");
-
-    // 各質問にクリックイベントを追加
-    question.addEventListener("click", function () {
-      if (answer.classList.contains("open")) {
-        // 答えを閉じる処理
-        answer.classList.remove("open");
-        question.classList.remove("open");
-      } else {
-        // 答えを開く処理
-        answer.classList.add("open");
-        question.classList.add("open");
-      }
-    });
+  //faqのアコーディオン
+  $(".js-menu").on("click", function () {
+    $(this).toggleClass("close");
+    $(this).next(".faq__answer").slideToggle();
   });
 
-  // モーダル関連の要素を取得
+  // Aboutページ モーダル関連の要素を取得
   const modal = document.getElementById("js-modal");
-  const modalImg = document.getElementById("js-modal__img");
+  const modalImg = document.getElementById("js-modal-img");
   const modalOpenElements = document.querySelectorAll(".gallery__photo");
   const modalClose = document.getElementById("js-modal__close");
 
-  // スクロールを制御する関数
+  // モーダルが開いている時の後ろ スクロールを制御する関数
   function toggleBodyLock(isLocked) {
     if (isLocked) {
       document.body.style.overflow = "hidden"; // スクロールを無効にする
@@ -176,38 +152,117 @@ jQuery(function ($) {
 
   // モーダル外をクリックした場合にモーダルを閉じる
   modal.addEventListener("click", function (event) {
-    if (event.target === modal) {
+    if (event.target === modal || event.target === modalImg) {
       modal.style.display = "none"; // モーダルを閉じる
       toggleBodyLock(false); // スクロールを再度有効化
     }
   });
 });
 
-
-
+//Informationページ タブ切り替え
 document.addEventListener("DOMContentLoaded", function () {
-  // すべてのタブ要素とコンテンツ要素を取得
   const tabs = document.querySelectorAll(".tab__name");
   const contents = document.querySelectorAll(".tab__content");
+
+  const HEADER_HEIGHT = 90; // ヘッダーの高さを設定
+  // タブをアクティブにする関数
+  function activateTab(index) {
+    // すでにアクティブなタブとコンテンツからクラスを削除
+    document
+      .querySelector(".tab__name.is-change")
+      .classList.remove("is-change");
+    document.querySelector(".tab__content.is-show").classList.remove("is-show");
+
+    // 対応するタブとコンテンツにクラスを追加
+    tabs[index].classList.add("is-change");
+    contents[index].classList.add("is-show");
+
+    // 対象のタブ要素のスクロール位置を調整
+    const tabElement = tabs[index];
+    const tabPosition =
+      tabElement.getBoundingClientRect().top +
+      window.pageYOffset -
+      HEADER_HEIGHT;
+    window.scrollTo({
+      top: tabPosition,
+      behavior: "smooth", // スムーズスクロール
+    });
+  }
 
   // 各タブにクリックイベントを追加
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", function (event) {
       event.preventDefault(); // デフォルトのリンク動作を無効化
-
-      // すでにアクティブなタブとコンテンツからクラスを削除
-      document
-        .querySelector(".tab__name.is-change")
-        .classList.remove("is-change");
-      document
-        .querySelector(".tab__content.is-show")
-        .classList.remove("is-show");
-
-      // クリックされたタブにis-changeクラスを追加
-      this.classList.add("is-change");
-
-      // クリックされたタブに対応するコンテンツにis-showクラスを追加
-      contents[index].classList.add("is-show");
+      activateTab(index); // クリックされたタブをアクティブにする
     });
   });
+
+  //Footerで選んだタブに着地
+  // ページ読み込み時、またはハッシュ変更時にタブをアクティブにする
+  function checkHash() {
+    const hash = window.location.hash;
+    if (hash === "#tab3") {
+      activateTab(2); // "体験ダイビング"のタブをアクティブにする
+    } else if (hash === "#tab1") {
+      activateTab(0); // "ライセンス講習"のタブをアクティブにする
+    } else if (hash === "#tab2") {
+      activateTab(1); // "ファンダイビング"のタブをアクティブにする
+    }
+  }
+
+  // ページ初期読み込み時にハッシュを確認
+  checkHash();
+
+  // ハッシュが変更されたときにタブをチェック
+  window.addEventListener("hashchange", checkHash);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const HEADER_HEIGHT = 90; // ヘッダーの高さを設定
+  const links = document.querySelectorAll('a[href^="#"]'); // ハッシュリンクをすべて取得
+
+  // ページが読み込まれた後、ヘッダーの高さを考慮してスクロール位置を調整
+  function adjustScrollPosition() {
+    const hash = window.location.hash; // 現在のハッシュを取得
+    if (hash) {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        const elementPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          HEADER_HEIGHT;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth", // スムーズなスクロール
+        });
+      }
+    }
+  }
+
+  // ハッシュリンクをクリックしたときに位置を調整
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const targetId = this.getAttribute("href").split("#")[1];
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        event.preventDefault(); // デフォルトのリンク動作を無効化
+        const elementPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          HEADER_HEIGHT;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
+        // ハッシュをURLにセット
+        window.history.pushState(null, null, `#${targetId}`);
+      }
+    });
+  });
+
+  // ページ読み込み時にハッシュがある場合にスクロール位置を調整
+  adjustScrollPosition();
+
+  // ハッシュが変更されたとき（例えば手動でURLにハッシュを追加した場合）も対応
+  window.addEventListener("hashchange", adjustScrollPosition);
 });

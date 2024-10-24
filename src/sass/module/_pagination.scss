@@ -1,13 +1,6 @@
 @use "global" as *;
-.pagination {
-  margin-top: rem(80);
-}
-.pagination--blog {
-  margin-top: rem(44);
-  @include mq("md") {
-    margin-top: rem(86);
-  }
-}
+
+
 
 .pagination__wrap {
   display: flex;
