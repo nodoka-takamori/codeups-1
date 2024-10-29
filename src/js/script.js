@@ -84,7 +84,7 @@ jQuery(function ($) {
   });
 
   //button-top
-  var pagetop = $("#button-top");
+  var pagetop = $("#js-button-top");
   pagetop.hide();
   $(window).scroll(function () {
     if ($(this).scrollTop() > 80) {
@@ -119,7 +119,7 @@ jQuery(function ($) {
   });
 
   //faqのアコーディオン
-  $(".js-menu").on("click", function () {
+  $(".js-faq").on("click", function () {
     $(this).toggleClass("close");
     $(this).next(".faq__answer").slideToggle();
   });
@@ -157,6 +157,8 @@ jQuery(function ($) {
     }
   });
 });
+
+//informationページのタブ切り替え
 
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".tab__name");
