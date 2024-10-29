@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .terms {
-  margin-top: rem(80);
+  margin-top: rem(51);
   @include mq("md") {
-    margin-top: rem(178);
+    margin-top: rem(149);
   }
 }
 
@@ -17,6 +17,7 @@
   height: rem(55);
   left: calc(50% - min(48.5vw, rem(172)));
   top: rem(-24);
+  z-index: -1;
   background: url(../../assets/images/common/decoration_3.png) center center /
     contain no-repeat;
   @include mq("md") {

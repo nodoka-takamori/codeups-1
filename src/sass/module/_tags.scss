@@ -1,9 +1,13 @@
 @use "global" as *;
 .tags {
-  gap: rem(16) rem(22);
+  gap: rem(18) rem(22);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: rem(346);
+  margin-inline: auto;
   @include mq("md") {
+    width: 100%;
+    margin-inline: initial;
     display: flex;
     flex-wrap: wrap;
     gap: rem(16) rem(32);
@@ -19,6 +23,7 @@
   font-weight: $regular;
   line-height: 1;
   min-width: rem(162);
+  width: rem(162);
   padding: rem(8) 0;
   position: relative;
   text-align: center;

@@ -9,7 +9,6 @@
   }
 }
 
-
 // .anchor {
 //   display: inline-block;
 //   padding-top: rem(800);
@@ -108,7 +107,7 @@
   align-items: center;
   justify-content: center;
   gap: rem(5);
-  padding: rem(19) rem(24);
+  padding: rem(19) rem(24) rem(25);
   border: 1px solid $blue;
 
   @include mq("md") {
@@ -128,7 +127,6 @@
   font-family: $base-font-family;
   font-weight: $bold;
   border-bottom: 1px solid $blue;
-  margin-bottom: rem(12);
 }
 
 .tab__text {
@@ -136,6 +134,7 @@
   font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $regular;
+  margin-top: rem(8);
 }
 
 .tab__photo {

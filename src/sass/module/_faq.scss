@@ -1,4 +1,7 @@
 @use "global" as *;
+.faq {
+  width: 100%;
+}
 
 .faq__block:not(:first-child) {
   margin-top: rem(46);
@@ -75,39 +78,35 @@
 
 .faq__question span {
   position: absolute;
-  left: rem(300);
-  width: rem(28);
+  right: rem(17);
+  width: rem(30);
   height: rem(1);
-  top: 50%;
+  top: 45%;
   background-color: $white;
   border-radius: 4px;
   z-index: 5;
   transition: transform 0.3s ease; /* 回転のトランジション */
   transform: rotate(180deg); /* ＋ の縦棒 */
   @include mq("md") {
-    left: rem(632);
+    right: rem(44);
+    top: 50%;
   }
-}
-
-.faq__question {
-  position: relative;
-  cursor: pointer;
 }
 
 .faq__question span:nth-of-type(2) {
   position: absolute;
-  left: rem(300);
-  width: rem(28); /* 縦棒の幅（初期は横棒） */
+  right: rem(17);
+  width: rem(30); /* 縦棒の幅（初期は横棒） */
   height: rem(1);
-  top: 50%;
+  top: 45%;
   background-color: #fff;
   border-radius: 4px;
   z-index: 5;
   transition: transform 0.3s ease; /* 回転時のアニメーション */
   transform: rotate(0deg);
-
   @include mq("md") {
-    left: rem(632);
+    right: rem(44);
+    top: 50%;
   }
 }
 

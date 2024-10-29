@@ -20,11 +20,10 @@
   }
 }
 
-
 .page-voice__pagination {
-  margin-top: rem(89);
+  margin-top: rem(75);
   @include mq("md") {
-    margin-top: rem(64);
+    margin-top: rem(70);
   }
 }
 .page-voice__contact {

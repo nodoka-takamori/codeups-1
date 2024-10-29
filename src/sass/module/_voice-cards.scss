@@ -1,28 +1,33 @@
 @use "global" as *;
 
 .voice-cards {
-  max-width: rem(600);
+  width: 100%;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   row-gap: rem(40);
   @include mq("md") {
-    max-width: 100%;
     display: grid;
+    gap: 2.5rem;
     grid-template-columns: repeat(2, 1fr);
-    gap: rem(40);
+    max-width: 100%;
   }
 }
 
 .voice-cards__item {
   margin-inline: auto;
+  max-width: rem(500);
   @include mq("md") {
     margin-inline: initial;
+    max-width: rem(600);
   }
 }
 .voice-cards--sub {
+  max-width: rem(600);
+  width: 100%;
   gap: rem(40);
   @include mq("md") {
-    gap: rem(82) rem(40);
+    max-width: rem(1080);
+    gap: rem(80) rem(40);
   }
 }

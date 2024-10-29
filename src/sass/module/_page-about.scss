@@ -12,9 +12,10 @@
   top: rem(-24);
   background: url(../../assets/images/common/decoration_3.png) center center /
     contain no-repeat;
+  z-index: -1;
   @include mq("md") {
     left: calc(50% - min(48.5vw, rem(621)));
-    top: rem(-153);
+    top: rem(-150);
     width: rem(301);
     height: rem(138);
   }
@@ -26,7 +27,7 @@
     background: url(../../assets/images/common/decoration_5.png) center center /
       contain no-repeat;
     right: calc(50% - min(48.5vw, rem(641)));
-    bottom: rem(-172);
+    bottom: rem(-177);
     width: rem(301);
     height: rem(138);
   }

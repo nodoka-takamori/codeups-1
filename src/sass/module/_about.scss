@@ -75,8 +75,6 @@
   }
 }
 
-
-
 .about__text-title {
   font-family: $english-font-family;
   font-size: rem(40);
@@ -115,7 +113,7 @@
 }
 // aboutページの調整
 
-.about__photo-container--sub.about__photo-container--sub{
+.about__photo-container--sub.about__photo-container--sub {
   margin-top: 0;
   @include mq("md") {
     margin-top: rem(119);
@@ -142,7 +140,7 @@
 .about__text-title--sub {
   position: absolute;
   top: 15.5%;
-  left: 35%;
+  left: rem(124);
   transform: translate(-50%, -50%);
   z-index: 5;
   margin-top: 0;
@@ -160,26 +158,28 @@
     margin-top: rem(-9);
     transform: translate(0, 0);
   }
-  }
+}
 
-.about__text-contents--sub.about__text-contents--sub{
+.about__text-contents--sub {
   margin-top: rem(59);
   @include mq("md") {
-width: 77.77%;
-  position: absolute;
-  top: 38.5%;
-  left: 57%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-  margin-top: 0;
+    width: 77.77%;
+    position: absolute;
+    top: 38.5%;
+    left: rem(621);
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-top: 0;
   }
 }
 
-.about__text--sub.about__text--sub {
-  margin-top: rem(-22);
-
+.about__text--sub {
+  margin-top: rem(-19);
+  @include mq("md") {
+    margin-top: rem(-13);
+  }
 }

@@ -10,9 +10,20 @@
   font-size: rem(14);
   font-weight: $regular;
   color: $black;
+
 }
+
 .breadcrumb__list li:not(:last-of-type)::after {
   content: "›";
-  margin: 0 0.6em;
+  margin: 0 rem(8);
   color: $black;
+}
+// 404ページのパンクズ
+.breadcrumb__list--404 a {
+  color: $white;
+}
+.breadcrumb__list--404 li:not(:last-of-type)::after {
+  content: "›";
+  margin: 0 rem(8);
+  color: $white;
 }

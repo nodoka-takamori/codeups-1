@@ -14,14 +14,18 @@
   border-collapse: collapse;
   max-width: rem(700);
   width: 100%;
+  font-weight: $regular;
+  color: $black;
+  font-size: rem(16);
+  line-height: 1.5;
+  height: 100%;
 }
 
-
+.price__table,
+.price__table tr,
 .price__table td {
-  border: 1px solid $blue;
-  border-collapse: collapse;
+  box-sizing: border-box;
 }
-
 .price-list__title {
   padding: rem(9) rem(30);
   width: 100%;
@@ -33,10 +37,12 @@
   gap: rem(8);
   align-items: center;
   justify-content: center;
+  height: rem(40);
   @include mq("md") {
     flex-direction: column;
     padding: 0;
     width: rem(283);
+    height: initial;
   }
 }
 
@@ -54,21 +60,29 @@
     width: rem(64);
   }
 }
-
+.price__table tr,
+.price__table td {
+  height: rem(60);
+}
 .price-list__sub-title {
   text-align: center;
   width: rem(300);
-  font-weight: $regular;
+  padding: rem(0) rem(15);
+  border: 1px solid $blue;
+  border-collapse: collapse;
   @include mq("md") {
     text-align: initial;
-    padding: rem(18) rem(15);
+    padding: rem(0) rem(15);
+    // height: rem(60);
   }
 }
 
-.price__price{
+.price__price {
   width: rem(108);
   text-align: end;
-  padding: rem(18) rem(15);
+  padding: rem(0) rem(15);
+  border: 1px solid $blue;
+  border-collapse: collapse;
   font-weight: $regular;
   @include mq("md") {
     width: rem(145);

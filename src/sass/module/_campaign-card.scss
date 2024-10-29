@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .campaign-card {
-  width: rem(280); /* カードの幅を固定 */
+  min-width: rem(280); /* カードの幅を固定 */
   display: flex;
   flex-direction: column; /* 縦に要素を積み上げる */
   flex-grow: 1; /* カードを可能な限り同じ高さに引き伸ばす */
@@ -73,9 +73,11 @@
   align-content: center;
   line-height: 1;
   padding: rem(8) 0;
-  max-width: rem(108);
+  min-width: rem(108);
+  width: rem(108);
   @include mq("md") {
-    max-width: rem(128);
+    min-width: rem(128);
+    width: rem(128);
     padding: rem(10) 0;
   }
 }
@@ -150,7 +152,8 @@
 //////////////
 .campaign-card--big {
   @include mq("md") {
-    width: rem(520);
+    width: 100%;
+    max-width: rem(520);
   }
 }
 .campaign-card__body--big {
@@ -209,7 +212,7 @@
   font-weight: $bold;
   color: $blue;
   margin-top: rem(38);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   @include mq("md") {
     margin-top: rem(30);
   }

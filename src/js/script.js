@@ -96,7 +96,6 @@ jQuery(function ($) {
 
   //blogページのアーカイブトグル
   const toggleItems = document.querySelectorAll(".js-archive__toggle"); // クリックして開閉するトグル要素を取得
-
   toggleItems.forEach((item) => {
     item.addEventListener("click", function (event) {
       event.preventDefault();
@@ -159,110 +158,59 @@ jQuery(function ($) {
   });
 });
 
-//Informationページ タブ切り替え
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".tab__name");
   const contents = document.querySelectorAll(".tab__content");
 
   const HEADER_HEIGHT = 90; // ヘッダーの高さを設定
+
   // タブをアクティブにする関数
   function activateTab(index) {
-    // すでにアクティブなタブとコンテンツからクラスを削除
     document
       .querySelector(".tab__name.is-change")
       .classList.remove("is-change");
     document.querySelector(".tab__content.is-show").classList.remove("is-show");
 
-    // 対応するタブとコンテンツにクラスを追加
     tabs[index].classList.add("is-change");
     contents[index].classList.add("is-show");
+  }
 
-    // 対象のタブ要素のスクロール位置を調整
-    const tabElement = tabs[index];
+  // スクロール位置を調整する関数
+  function scrollToTab(index) {
     const tabPosition =
-      tabElement.getBoundingClientRect().top +
+      tabs[index].getBoundingClientRect().top +
       window.pageYOffset -
       HEADER_HEIGHT;
     window.scrollTo({
       top: tabPosition,
-      behavior: "smooth", // スムーズスクロール
+      behavior: "smooth",
     });
   }
 
   // 各タブにクリックイベントを追加
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", function (event) {
-      event.preventDefault(); // デフォルトのリンク動作を無効化
-      activateTab(index); // クリックされたタブをアクティブにする
+      event.preventDefault();
+      activateTab(index);
     });
   });
 
-  //Footerで選んだタブに着地
-  // ページ読み込み時、またはハッシュ変更時にタブをアクティブにする
+  // ページ読み込み後にハッシュを確認してタブにスクロール
   function checkHash() {
     const hash = window.location.hash;
     if (hash === "#tab3") {
-      activateTab(2); // "体験ダイビング"のタブをアクティブにする
+      activateTab(2);
+      setTimeout(() => scrollToTab(2), 1); // 遅延でスクロール実行 ここがチカっとする原因 これを消すとスクロールされない
     } else if (hash === "#tab1") {
-      activateTab(0); // "ライセンス講習"のタブをアクティブにする
+      activateTab(0);
+      setTimeout(() => scrollToTab(0), 1);
     } else if (hash === "#tab2") {
-      activateTab(1); // "ファンダイビング"のタブをアクティブにする
+      activateTab(1);
+      setTimeout(() => scrollToTab(1), 1);
     }
   }
 
-  // ページ初期読み込み時にハッシュを確認
-  checkHash();
-
-  // ハッシュが変更されたときにタブをチェック
+  // ページ初期読み込み時とハッシュ変更時にハッシュを確認
+  setTimeout(checkHash, 1); // ページ読み込み後も遅延でチェック
   window.addEventListener("hashchange", checkHash);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const HEADER_HEIGHT = 90; // ヘッダーの高さを設定
-  const links = document.querySelectorAll('a[href^="#"]'); // ハッシュリンクをすべて取得
-
-  // ページが読み込まれた後、ヘッダーの高さを考慮してスクロール位置を調整
-  function adjustScrollPosition() {
-    const hash = window.location.hash; // 現在のハッシュを取得
-    if (hash) {
-      const targetElement = document.querySelector(hash);
-      if (targetElement) {
-        const elementPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          HEADER_HEIGHT;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: "smooth", // スムーズなスクロール
-        });
-      }
-    }
-  }
-
-  // ハッシュリンクをクリックしたときに位置を調整
-  links.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      const targetId = this.getAttribute("href").split("#")[1];
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        event.preventDefault(); // デフォルトのリンク動作を無効化
-        const elementPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          HEADER_HEIGHT;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: "smooth",
-        });
-        // ハッシュをURLにセット
-        window.history.pushState(null, null, `#${targetId}`);
-      }
-    });
-  });
-
-  // ページ読み込み時にハッシュがある場合にスクロール位置を調整
-  adjustScrollPosition();
-
-  // ハッシュが変更されたとき（例えば手動でURLにハッシュを追加した場合）も対応
-  window.addEventListener("hashchange", adjustScrollPosition);
 });
