@@ -41,7 +41,7 @@
   @include mq("md") {
     flex-direction: column;
     padding: 0;
-    width: rem(283);
+    width: rem(279);
     height: initial;
   }
 }
@@ -63,6 +63,9 @@
 .price__table tr,
 .price__table td {
   height: rem(60);
+  @include mq("md") {
+    height: rem(59);
+  }
 }
 .price-list__sub-title {
   text-align: center;
@@ -72,8 +75,7 @@
   border-collapse: collapse;
   @include mq("md") {
     text-align: initial;
-    padding: rem(0) rem(15);
-    // height: rem(60);
+    padding: rem(0) rem(13);
   }
 }
 

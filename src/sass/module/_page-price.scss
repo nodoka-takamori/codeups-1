@@ -33,7 +33,23 @@
   flex-direction: column;
   gap: rem(40);
   @include mq("md") {
-    gap: rem(72);
+    gap: rem(0);
+  }
+}
+.page-price__list:nth-child(2) {
+  @include mq("md") {
+    margin-top: rem(74);
+  }
+}
+
+.page-price__list:nth-child(3) {
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+.page-price__list:nth-child(4) {
+  @include mq("md") {
+    margin-top: rem(80);
   }
 }
 
