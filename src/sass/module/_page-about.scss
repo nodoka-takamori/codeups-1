@@ -1,6 +1,11 @@
 @use "global" as *;
 .page-about__inner {
   position: relative;
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: $inner;
+  }
 }
 
 .page-about__inner::before {

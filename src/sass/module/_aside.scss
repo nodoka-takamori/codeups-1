@@ -1,11 +1,6 @@
 @use "global" as *;
 
-.aside__article {
-  margin-top: rem(1);
-  @include mq("md") {
-    margin-top: 0;
-  }
-}
+
 .aside__title-line {
   align-items: center;
   display: flex;
@@ -47,7 +42,6 @@
 
 .aside__article-block {
   width: 100%;
-  max-width: rem(294);
   display: flex;
   gap: rem(17);
   padding: rem(17) rem(17);
@@ -55,7 +49,7 @@
 }
 
 .aside__article-photo {
-  width: rem(121);
+  width: 52%;
 }
 .aside__article-photo img {
   aspect-ratio: 121 / 90;
@@ -64,7 +58,7 @@
 }
 
 .aside__article-meta {
-  width: rem(125);
+  width: 55%;
 }
 
 .aside__article-days {
@@ -86,7 +80,7 @@
 .aside__voice {
   margin-top: rem(79);
   @include mq("md") {
-    margin-top: rem(83);
+    margin-top: rem(85);
   }
 }
 .aside__voice-container {

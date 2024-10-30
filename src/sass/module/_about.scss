@@ -113,12 +113,6 @@
 }
 // aboutページの調整
 
-.about__photo-container--sub.about__photo-container--sub {
-  margin-top: 0;
-  @include mq("md") {
-    margin-top: rem(119);
-  }
-}
 .about__photo-container--sub::before {
   display: none;
 }

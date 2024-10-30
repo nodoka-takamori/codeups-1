@@ -1,14 +1,4 @@
 @use "global" as *;
-.faq {
-  width: 100%;
-}
-
-.faq__block:not(:first-child) {
-  margin-top: rem(46);
-  @include mq("md") {
-    margin-top: rem(43);
-  }
-}
 
 .faq__question {
   position: relative;
@@ -34,7 +24,7 @@
 }
 .faq__question::after {
   content: "";
-  display: inline-block;
+  display: inline;
   width: 18px;
   height: 11px;
   background: url(http://agdemo.net/sample/toggle/img/arrow_down.svg) no-repeat
@@ -69,7 +59,7 @@
   }
 }
 
-.faw__answer.is-close {
+.faq__answer.is-close {
   display: none;
 }
 

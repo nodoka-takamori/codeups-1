@@ -3,31 +3,19 @@
 .voice-cards {
   width: 100%;
   margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  row-gap: rem(40);
+  display: grid;
+  gap: rem(40);
   @include mq("md") {
-    display: grid;
-    gap: 2.5rem;
+    gap: rem(80) rem(40);
     grid-template-columns: repeat(2, 1fr);
-    max-width: 100%;
   }
 }
 
 .voice-cards__item {
   margin-inline: auto;
   max-width: rem(500);
-  @include mq("md") {
-    margin-inline: initial;
-    max-width: rem(600);
-  }
-}
-.voice-cards--sub {
-  max-width: rem(600);
   width: 100%;
-  gap: rem(40);
   @include mq("md") {
-    max-width: rem(1080);
-    gap: rem(80) rem(40);
+    max-width: initial;
   }
 }

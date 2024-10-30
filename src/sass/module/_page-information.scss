@@ -18,6 +18,12 @@
     height: rem(138);
   }
 }
+.page-information__inner {
+  max-width: rem(600);
+  @include mq("md") {
+    max-width: rem(1130);
+  }
+}
 .page-information__contact {
   margin-top: rem(108);
   @include mq("md") {

@@ -5,6 +5,7 @@
 .page-price::before {
   position: absolute;
   content: "";
+  z-index: -1;
   width: rem(120);
   height: rem(55);
   left: rem(15);
@@ -29,27 +30,10 @@
 }
 
 .page-price__container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: rem(40);
   @include mq("md") {
-    gap: rem(0);
-  }
-}
-.page-price__list:nth-child(2) {
-  @include mq("md") {
-    margin-top: rem(74);
-  }
-}
-
-.page-price__list:nth-child(3) {
-  @include mq("md") {
-    margin-top: rem(80);
-  }
-}
-.page-price__list:nth-child(4) {
-  @include mq("md") {
-    margin-top: rem(80);
+    gap: rem(74);
   }
 }
 
