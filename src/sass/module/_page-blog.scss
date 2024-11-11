@@ -138,6 +138,23 @@
     margin-top: rem(40);
   }
 }
+
+.page-blog__photo{
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.page-blog__photo img{
+  aspect-ratio: 700 / 468;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
 .page-blog__content {
   margin-top: rem(22);
   @include mq("md") {
@@ -194,8 +211,12 @@
 }
 
 .page-blog__pagination--sub {
+  display: flex;
+  gap: rem(12);
+  justify-content: center;
   margin-top: rem(42);
   @include mq("md") {
     margin-top: rem(83);
+    gap: rem(82);
   }
 }
