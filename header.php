@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="noindex" />
@@ -15,7 +15,10 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     -->
-    <?php wp_head(); ?>
+    <?php if (is_404()) : ?>
+    <meta http-equiv="refresh" content=" 5; url=<?php echo esc_url(home_url("")); ?>">
+<?php endif; ?>
+<?php wp_head(); ?>
 </head>
 
 <?php

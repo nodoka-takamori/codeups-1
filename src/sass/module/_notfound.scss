@@ -32,7 +32,7 @@
   }
 }
 
-.notfound__text-wrap{
+.notfound__text-wrap {
   text-align: center;
   position: relative;
   z-index: 2;
@@ -72,14 +72,10 @@
     margin-top: rem(80);
   }
 }
-.notfound__footer {
-  margin-top: rem(-1);
-  @include mq("md") {
-    margin-top: rem(-1);
-  }
-}
-.notfound__footer {
+
+.footer.notfound__footer {
   padding-top: rem(54);
+  margin-top: rem(-1);
   @include mq("md") {
     padding-top: rem(88);
   }

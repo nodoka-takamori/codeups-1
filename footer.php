@@ -12,7 +12,7 @@ $privacypolicy = esc_url(home_url( '/privacypolicy' ) );
 $terms = esc_url(home_url( '/terms' ) );
 ?>
 
-<footer class="footer top-footer">
+<footer class="footer <?php echo is_404() ? 'notfound__footer' : 'top-footer'; ?>">
       <div class="inner">
         <nav class="footer__nav">
           <div class="footer__logo-warp">

@@ -29,6 +29,8 @@
 }
 .form__group--cam.form__group--cam {
   padding-bottom: rem(25);
+  display: flex;
+  align-items: center;
   @include mq("md") {
     margin-top: rem(34);
     padding-bottom: rem(39);
@@ -66,7 +68,9 @@ input[type="tel"] {
   color: $black;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 textarea {
   width: 100%;
   padding: rem(8) rem(15);
@@ -75,9 +79,23 @@ textarea {
   box-sizing: border-box;
   @include mq("md") {
     // max-width: rem(482);
-    width: 68.57%;
+    // width: 68.57%;
     padding: rem(7) rem(16);
   }
+}
+.form_name,
+.form_email,
+.form_tel,
+.form_textarea {
+  width: 100%;
+  @include mq("md") {
+    width: 68.57%;
+  }
+}
+
+.form_checkbox span {
+  display: flex;
+  justify-content: space-between;
 }
 
 textarea {
@@ -110,6 +128,8 @@ select {
   color: $black;
   font-family: $regular;
   font-family: $base-font-family;
+  display: flex;
+  flex-direction: column;
   @include mq("md") {
     max-width: rem(482);
     margin-top: rem(4);
@@ -124,6 +144,9 @@ select {
     gap: rem(9);
   }
 }
+// .checkbox-group label {
+
+// }
 
 .checkbox-group label:not(:first-child) {
   margin-top: rem(3);
@@ -183,7 +206,7 @@ input[type="checkbox"]:checked:before {
   border-bottom: 0;
   @include mq("md") {
     right: rem(10);
-    top: rem(12);
+    top: rem(36);
     border-right: rem(5) solid transparent;
     border-left: rem(5) solid transparent;
     border-top: rem(9) solid $blue;
@@ -201,11 +224,24 @@ input[type="checkbox"]:checked:before {
   gap: rem(11);
   width: rem(300);
   margin-inline: auto;
+  align-items: center;
   cursor: initial;
   @include mq("md") {
     width: rem(373);
     gap: rem(12);
   }
+}
+.wpcf7-form-control-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.button p {
+  display: flex;
+}
+
+.form__group--pr p {
+  text-align: center;
 }
 .form__group-box--pr[type="checkbox"] {
   display: flex;
@@ -239,4 +275,38 @@ input[type="checkbox"]:checked:before {
   @include mq("md") {
     margin-top: rem(38);
   }
+}
+
+.wpcf7-submit {
+  color: $white;
+  position: relative;
+}
+.wpcf7-submit:hover {
+  color: $blue;
+}
+
+
+
+input {
+  // display: flex;
+}
+.wpcf7 .wpcf7-spinner {
+  display: none !important;
+}
+
+.wpcf7-spinner {
+  visibility: hidden;
+  display: inline-block;
+  background-color: #23282d;
+  opacity: 0.75;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 24px;
+  position: relative;
+}
+.wpcf7 form .wpcf7-response-output {
+  display: none;
 }

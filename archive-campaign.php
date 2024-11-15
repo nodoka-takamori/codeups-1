@@ -26,76 +26,75 @@
           </div>
           <!-- カード -->
           <div class="page-campaign__cards campaign-cards">
-            <div class="campaign-cards__inner">
-              <?php if(have_posts()): ?>
-                <?php while(have_posts()): the_post(); ?>
-              <div class="campaign-card campaign-card--big">
-              <div class="campaign-card__img">
-              <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('full'); ?>
-                  <?php else: ?>
-                    <img
-                        src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/noimage.jpg"
-                        alt="noimage"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      <?php endif; ?>
+    <div class="campaign-cards__inner">
+        <?php if(have_posts()): ?>
+            <?php while(have_posts()): the_post(); ?>
+                <div class="campaign-card campaign-card--big">
+                    <div class="campaign-card__img">
+                        <?php if (has_post_thumbnail()): ?>
+                            <?php the_post_thumbnail('full'); ?>
+                        <?php else: ?>
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/noimage.jpg"
+                                alt="noimage"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        <?php endif; ?>
                     </div>
-                <div class="campaign-card__body campaign-card__body--big">
-                  <div class="campaign-card__title-container">
-                  <?php
-                  $categories = get_the_category();
-                  if ( ! empty( $categories ) ) {
-                    foreach( $categories as $category ) {
-                      echo '<div class="campaign-card__category">' . esc_html( $category->name ) . '</span>';
-                    }
-                  }
-                  ?>
-                    <!-- <div class="campaign-card__category">ライセンス取得</div> -->
-                    <h3 class="campaign-card__title campaign-card__title--big">
-                    <?php the_title(); ?>
-                    </h3>
-                  </div>
-                  <div
-                    class="campaign-card__text-wrap campaign-card__text-wrap--big"
-                  >
-                    <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                    <div
-                      class="campaign-card__price-wrap campaign-card__price-wrap--big"
-                    >
-                      <div
-                        class="campaign-card__subprice campaign-card__subprice--big"
-                      >
-                        <span>¥56,000</span>
-                      </div>
-                      <div class="campaign-card__price">¥46,000</div>
+                    <div class="campaign-card__body campaign-card__body--big">
+                        <div class="campaign-card__title-container">
+                            <?php
+                            $categories = get_the_category();
+                            if ( ! empty( $categories ) ) {
+                                foreach( $categories as $category ) {
+                                    echo '<div class="campaign-card__category">' . esc_html( $category->name ) . '</div>';
+                                }
+                            }
+                            ?>
+                            <h3 class="campaign-card__title campaign-card__title--big">
+                                <?php the_title(); ?>
+                            </h3>
+                        </div>
+                        <div class="campaign-card__text-wrap campaign-card__text-wrap--big">
+                            <p class="campaign-card__text">全部コミコミ(お一人様)</p>
+                            <div class="campaign-card__price-wrap campaign-card__price-wrap--big">
+                                <div class="campaign-card__subprice campaign-card__subprice--big">
+                                    <span>¥56,000</span>
+                                </div>
+                                <div class="campaign-card__price">
+                                    <?php
+                                    // ACFで設定したカスタムフィールド「campaign_price」の値を取得して表示
+                                    $price = get_field('campaign_price');
+                                    echo '¥' . number_format($price);
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="campaign-card__text-wrapper campaign-card__text-wrapper--big">
+                                <div class="campaign-card__text-info">
+                                    <p>
+                                        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
+                                        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+                                    </p>
+                                </div>
+                                <p class="campaign-card__day">2023/6/1-9/30</p>
+                                <p class="campaign-card__contact-info">
+                                    ご予約・お問い合わせはコチラ
+                                </p>
+                            </div>
+                            <div class="campaign-card__button">
+                                <a href="./contact.html" class="button">
+                                    Contact us<span class="arrow"></span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div
-                      class="campaign-card__text-wrapper campaign-card__text-wrapper--big"
-                    >
-                      <div class="campaign-card__text-info">
-                        <p>
-                          ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                          ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                        </p>
-                      </div>
-                      <p class="campaign-card__day">2023/6/1-9/30</p>
-                      <p class="campaign-card__contact-info">
-                        ご予約・お問い合わせはコチラ
-                      </p>
-                    </div>
-                    <div class="campaign-card__button">
-                      <a href="./contact.html" class="button"
-                        >Contact us<span class="arrow"></span
-                      ></a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <?php endwhile; endif; ?>
-            </div>
-          </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
+</div>
+
           <div class="pagination page-blog__pagination">
               <div class="pagination__wrap">
               <?php wp_pagenavi(); ?>

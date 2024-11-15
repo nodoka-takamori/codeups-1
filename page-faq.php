@@ -15,96 +15,40 @@
         </picture>
       </section>
       <?php get_template_part('breadcrumb'); ?>
-      <div class="page-faq layout-faq">
-        <div class="page-faq__inner inner">
-          <div class="faq-container">
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-            <div class="faq-container__item faq">
-              <div class="faq__question js-faq">
-                <p>ここに質問が入ります。</p>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="faq__answer">
-                <p>
-                  ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                </p>
-              </div>
-            </div>
-          </div>
+      <?php
+// SCFからFAQリストを取得
+$faq_list = SCF::get('faq_1');
+?>
+
+<div class="page-faq layout-faq">
+    <div class="page-faq__inner inner">
+        <div class="faq-container">
+            <?php if ($faq_list) : ?>
+                <?php foreach ($faq_list as $faq) : ?>
+                    <?php
+                        $question = $faq['question_1'];
+                        $answer = $faq['answer_1'];
+                    ?>
+                    <div class="faq-container__item faq">
+                        <div class="faq__question js-faq">
+                            <p><?php echo esc_html($question); ?></p>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="faq__answer">
+                            <p><?php echo esc_html($answer); ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <p>FAQは現在ございません。</p>
+            <?php endif; ?>
         </div>
-      </div>
+    </div>
+</div>
+
+</div>
+
       <section class="contact page-faq__contact">
         <div class="inner">
           <div class="contact__container">

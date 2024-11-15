@@ -61,86 +61,40 @@
       </section>
       <!-- ギャラリー -->
       <section class="gallery layout-gallery">
-        <div class="gallery__inner inner">
-          <div class="about__title section-header">
+    <div class="gallery__inner inner">
+        <div class="about__title section-header">
             <p class="section-header__title">Gallery</p>
             <h2 class="section-header__subtitle">フォト</h2>
-          </div>
-          <div class="gallery__photo-container">
-            <picture class="gallery__photo">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery1-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery1.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-            <picture class="gallery__photo">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery2-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery2.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-            <picture class="gallery__photo">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery3-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery3.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-            <picture class="gallery__photo">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery4-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery4.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-            <picture class="gallery__photo">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery5-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery5.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-            <picture class="gallery__photo gallery__photo--big">
-              <source
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery6-sp.jpg"
-                media="(max-width:768px)"
-              />
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery6.jpg"
-                alt="2匹の黄色の熱帯魚が海で泳いでいる"
-              />
-            </picture>
-          </div>
         </div>
-        <!-- モーダル -->
-        <div id="js-modal" class="modal js-sp-nav">
-          <div class="modal__content">
-            <img
-              id="js-modal-img"
-              src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/common/gallery1.jpg"
-              alt="拡大画像"
-              class="modal__image"
-            />
-          </div>
+        <div class="gallery__photo-container">
+            <?php
+            // SCFからギャラリー画像のリストを取得
+            $gallery_photos = SCF::get('gallery_photos');
+            if ($gallery_photos) :
+                foreach ($gallery_photos as $photo) :
+                    // 画像IDからURLを取得
+                    $photo_pc = wp_get_attachment_image_url($photo['gallery_photo_pc'], 'full');
+                    $photo_sp = wp_get_attachment_image_url($photo['gallery_photo_sp'], 'full');
+                    ?>
+                    <picture class="gallery__photo">
+                        <source srcset="<?php echo esc_url($photo_sp); ?>" media="(max-width:768px)" />
+                        <img src="<?php echo esc_url($photo_pc); ?>" alt="ギャラリー画像" />
+                    </picture>
+                <?php
+                endforeach;
+            else :
+                echo '<p>ギャラリー画像は現在ございません。</p>';
+            endif;
+            ?>
         </div>
-      </section>
+    </div>
+    <!-- モーダル -->
+    <div id="js-modal" class="modal js-sp-nav">
+        <div class="modal__content">
+            <img id="js-modal-img" src="" alt="拡大画像" class="modal__image" />
+        </div>
+    </div>
+</section>
       <section class="contact page-about__contact">
         <div class="inner">
           <div class="contact__container">

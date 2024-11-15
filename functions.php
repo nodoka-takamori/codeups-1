@@ -38,3 +38,9 @@ function my_script_init() {
     wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/assets/js/script.js', array('jquery'), '1.0.1', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+}

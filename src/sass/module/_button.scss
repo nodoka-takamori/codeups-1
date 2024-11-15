@@ -17,9 +17,11 @@
   display: inline-block;
   position: relative;
   z-index: 1;
+
 }
-.button--send.button--send {
+.button.button--send {
   padding: rem(15) rem(61) rem(15);
+  margin-inline: initial;
 }
 .button::after {
   background: $white;
@@ -42,6 +44,17 @@
 .button:hover::after {
   transform: scale(1, 1);
 }
+.button::before {
+  content: "";
+  position: absolute;
+  top: rem(4);
+  left: rem(5);
+  width: 100%;
+  height: 100%;
+  border: 1px solid #408f95;
+  display: inline-block;
+  z-index: -10;
+}
 
 //色が変わるボタンの矢印
 .arrow {
@@ -49,7 +62,7 @@
   display: inline-block;
   width: rem(40);
   height: rem(1);
-  margin-top: rem(1);
+  top: 60%;
   border-radius: 9999px;
   background-color: $white;
   margin-left: rem(10);
@@ -72,17 +85,6 @@
   background-color: $blue;
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  top: rem(4);
-  left: rem(5);
-  width: 100%;
-  height: 100%;
-  border: 1px solid #408f95;
-  display: inline-block;
-  z-index: -10;
-}
 
 /// 背景白のボタン
 .button__white {
@@ -90,9 +92,8 @@
   align-items: center;
   justify-content: center;
   margin-inline: auto;
-
   background: $white;
-  border: 1px solid $white;
+  border: 1px solid $blue;
   border-radius: 0;
   color: $blue;
   font-size: rem(14);
@@ -182,3 +183,91 @@
 .button-top img {
   aspect-ratio: 1/1;
 }
+
+///////////////
+.button__back {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  background: $white;
+  border: 1px solid $blue;
+  border-radius: 0;
+  color: $blue;
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $english-font-family;
+  padding: rem(15) rem(40) rem(15);
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.button__back::after {
+  background: $blue;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.button__back:hover {
+  color: $white;
+}
+
+.button__back:hover::after {
+  transform: scale(1, 1);
+}
+.button__back::before {
+  content: "";
+  position: absolute;
+  top: rem(4);
+  left: rem(5);
+  width: 100%;
+  height: 100%;
+  border: 1px solid $blue;
+  display: inline-block;
+  z-index: -10;
+}
+.wpcf7-previous {
+  color: $blue;
+}
+.wpcf7-previous:hover {
+  color: $white;
+}
+
+// //色が変わるボタンの矢印
+// .arrow__back {
+//   position: relative;
+//   display: inline-block;
+//   width: rem(40);
+//   height: rem(1);
+//   margin-top: rem(1);
+//   border-radius: 9999px;
+//   background-color: $blue;
+//   margin-left: rem(10);
+// }
+
+// .arrow__back::before {
+//   content: "";
+//   position: absolute;
+//   top: calc(50% - rem(2));
+//   right: 0;
+//   width: rem(10);
+//   height: rem(1);
+//   border-radius: 9999px;
+//   background-color: $blue;
+//   transform: rotate(45deg);
+//   transform-origin: calc(100% - 2px) 50%;
+// }
+// .button__back:hover .arrow__back,
+// .button__back:hover .arrow__back::before {
+//   background-color: $white;
+// }
+
