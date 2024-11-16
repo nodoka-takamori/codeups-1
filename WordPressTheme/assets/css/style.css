@@ -611,6 +611,14 @@ a {
 	color: #408F95;
 }
 
+.button .wpcf7-submit {
+	color: #fff;
+}
+
+.button:hover .wpcf7-submit {
+	color: #408F95;
+}
+
 .button:hover::after {
 	transform: scale(1, 1);
 }
@@ -634,7 +642,6 @@ a {
 	height: 0.0625rem;
 	margin-left: 0.625rem;
 	position: relative;
-	top: 60%;
 	width: 2.5rem;
 }
 
@@ -767,7 +774,6 @@ a {
 	padding: 0.9375rem 2.5rem 0.9375rem;
 	position: relative;
 	text-align: center;
-	z-index: 1;
 }
 
 .button__back::after {
@@ -781,10 +787,14 @@ a {
 	transform-origin: left top;
 	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 	width: 100%;
-	z-index: -1;
+	z-index: 10;
 }
 
-.button__back:hover {
+.button__back .wpcf7-previous {
+	color: #408F95;
+}
+
+.button__back:hover .wpcf7-previous {
 	color: #fff;
 }
 
@@ -802,14 +812,6 @@ a {
 	top: 0.25rem;
 	width: 100%;
 	z-index: -10;
-}
-
-.wpcf7-previous {
-	color: #408F95;
-}
-
-.wpcf7-previous:hover {
-	color: #fff;
 }
 
 .campaign-card {
@@ -1049,14 +1051,14 @@ a {
 
 .campaign-swiper__button--prev {
 	aspect-ratio: 1/1;
-	background: url(/assets/images/common/left__arrow.png) center center/contain no-repeat;
+	background: url(/dist/assets/images/common/left__arrow.png) center center/contain no-repeat;
 	height: 5rem;
 	width: 5rem;
 }
 
 .campaign-swiper__button--next {
 	aspect-ratio: 1/1;
-	background: url(/assets/images/common/right__arrow.png) center center/contain no-repeat;
+	background: url(/dist/assets/images/common/right__arrow.png) center center/contain no-repeat;
 	height: 5rem;
 	max-width: 5rem;
 	width: 5rem;
@@ -1584,13 +1586,9 @@ input[type=checkbox]:checked:before {
 	text-align: center;
 }
 
-.wpcf7-submit {
-	color: #fff;
+.wpcf7-previous {
 	position: relative;
-}
-
-.wpcf7-submit:hover {
-	color: #408F95;
+	z-index: 20;
 }
 
 .wpcf7 .wpcf7-spinner {

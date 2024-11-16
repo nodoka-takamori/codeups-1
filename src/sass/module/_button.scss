@@ -17,7 +17,6 @@
   display: inline-block;
   position: relative;
   z-index: 1;
-
 }
 .button.button--send {
   padding: rem(15) rem(61) rem(15);
@@ -38,6 +37,13 @@
 }
 
 .button:hover {
+  color: $blue;
+}
+
+.button .wpcf7-submit {
+  color: $white;
+}
+.button:hover .wpcf7-submit {
   color: $blue;
 }
 
@@ -62,7 +68,6 @@
   display: inline-block;
   width: rem(40);
   height: rem(1);
-  top: 60%;
   border-radius: 9999px;
   background-color: $white;
   margin-left: rem(10);
@@ -84,7 +89,6 @@
 .button:hover .arrow::before {
   background-color: $blue;
 }
-
 
 /// 背景白のボタン
 .button__white {
@@ -168,7 +172,7 @@
   z-index: -10;
 }
 
-///////////////
+
 .button-top {
   position: fixed;
   bottom: rem(24);
@@ -184,7 +188,7 @@
   aspect-ratio: 1/1;
 }
 
-///////////////
+
 .button__back {
   text-align: center;
   align-items: center;
@@ -200,7 +204,6 @@
   padding: rem(15) rem(40) rem(15);
   display: inline-block;
   position: relative;
-  z-index: 1;
 }
 
 .button__back::after {
@@ -214,12 +217,18 @@
   transform: scale(0, 1);
   transform-origin: left top;
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-  z-index: -1;
+  z-index: 10;
 }
 
-.button__back:hover {
+
+
+.button__back .wpcf7-previous {
+  color: $blue;
+}
+.button__back:hover .wpcf7-previous {
   color: $white;
 }
+
 
 .button__back:hover::after {
   transform: scale(1, 1);
@@ -235,39 +244,3 @@
   display: inline-block;
   z-index: -10;
 }
-.wpcf7-previous {
-  color: $blue;
-}
-.wpcf7-previous:hover {
-  color: $white;
-}
-
-// //色が変わるボタンの矢印
-// .arrow__back {
-//   position: relative;
-//   display: inline-block;
-//   width: rem(40);
-//   height: rem(1);
-//   margin-top: rem(1);
-//   border-radius: 9999px;
-//   background-color: $blue;
-//   margin-left: rem(10);
-// }
-
-// .arrow__back::before {
-//   content: "";
-//   position: absolute;
-//   top: calc(50% - rem(2));
-//   right: 0;
-//   width: rem(10);
-//   height: rem(1);
-//   border-radius: 9999px;
-//   background-color: $blue;
-//   transform: rotate(45deg);
-//   transform-origin: calc(100% - 2px) 50%;
-// }
-// .button__back:hover .arrow__back,
-// .button__back:hover .arrow__back::before {
-//   background-color: $white;
-// }
-

@@ -78,8 +78,6 @@ textarea {
   border: 1px solid $blue;
   box-sizing: border-box;
   @include mq("md") {
-    // max-width: rem(482);
-    // width: 68.57%;
     padding: rem(7) rem(16);
   }
 }
@@ -144,9 +142,7 @@ select {
     gap: rem(9);
   }
 }
-// .checkbox-group label {
 
-// }
 
 .checkbox-group label:not(:first-child) {
   margin-top: rem(3);
@@ -277,19 +273,12 @@ input[type="checkbox"]:checked:before {
   }
 }
 
-.wpcf7-submit {
-  color: $white;
+.wpcf7-previous{
   position: relative;
-}
-.wpcf7-submit:hover {
-  color: $blue;
+  z-index: 20;
 }
 
 
-
-input {
-  // display: flex;
-}
 .wpcf7 .wpcf7-spinner {
   display: none !important;
 }
